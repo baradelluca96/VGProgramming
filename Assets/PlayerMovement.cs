@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         {
           velocity.y = -2f; // A constance force pushing on the ground;
         }
+
       float x = Input.GetAxis("Horizontal");
       float z = Input.GetAxis("Vertical");
 
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
       if(Input.GetButtonDown("Jump") && isGrounded)
         {
-      velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+          velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
       Vector3 move = transform.right * x + transform.forward * z;
