@@ -46,7 +46,6 @@ public class TriggerUI : MonoBehaviour
 
     public void showUI(string policy)
     {
-        Debug.Log("LOCK UI");
         lockOpen = true;
         canvas.SetActive(true);
         if(policy == "movement")
@@ -66,16 +65,26 @@ public class TriggerUI : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f); // After 1.5 sec
         tMPtext.text = "";
-
+        AudioSource textSound = GetComponent<AudioSource>();
         foreach (char c in instructions)
         {
 			tMPtext.text += c;
+            if(isOpen || lockOpen)
+            {
+                float rand = Random.Range(-1f, 1f); 
+                if(rand >= 0.4f || rand <= -0.4f)
+                {
+                    textSound.pitch = 1.2f + (rand * 0.5f);
+                    textSound.Play();
+                }
+            }
 			yield return new WaitForSeconds(0.02f);
         }
     }
 
     public void unlockUI()
     {
+        StopCoroutine("DisplayInstruction");
         tMPtext.text = "";
         lockOpen = false;
         canvas.SetActive(false);

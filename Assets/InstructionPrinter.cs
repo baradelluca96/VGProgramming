@@ -24,6 +24,7 @@ public class InstructionPrinter : MonoBehaviour
 
     public void RemoveMovementInstructions()
     {
+        Debug.Log("REMOVE MOV INSTRUCTIONS");
         uiHandler.unlockUI();
     }
 
