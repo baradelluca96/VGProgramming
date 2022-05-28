@@ -7,6 +7,7 @@ public class TriggerUI : MonoBehaviour
 {
     bool isOpen;
     bool lockOpen;
+    bool showAction;
     GameObject canvas;
     public GameObject companion;
     public float companionUISpeed = 5f;
@@ -35,13 +36,11 @@ public class TriggerUI : MonoBehaviour
         }
 
         if(isOpen || lockOpen) {
-            // Debug.Log(companion.transform.position);
             GameObject camera = GameObject.Find("Main Camera");
             Vector3 targetPosition = (camera.transform.position + camera.transform.forward * companionDistance + camera.transform.up * companionDistanceTop + camera.transform.right * companionDistanceSide);
             float distance = Mathf.Clamp(Vector3.Distance(companion.transform.position, targetPosition), 0.005f, 100f);
             companion.transform.position = Vector3.MoveTowards(companion.transform.position, targetPosition, companionUISpeed * Time.deltaTime * distance);
         }
-
     }
 
     public void showUI(string policy)
@@ -88,5 +87,17 @@ public class TriggerUI : MonoBehaviour
         tMPtext.text = "";
         lockOpen = false;
         canvas.SetActive(false);
+    }
+
+    public void activateAction(){
+        canvas.SetActive(true);
+        tMPtext.text = "E";
+        tMPtext.alignment = TMPro.TextAlignmentOptions.Center;
+    }
+
+    public void disableAction(){
+        tMPtext.text = "";
+        canvas.SetActive(false);
+        tMPtext.alignment = TMPro.TextAlignmentOptions.TopLeft;
     }
 }
