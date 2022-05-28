@@ -15,7 +15,6 @@ public class PlayerInstructions : MonoBehaviour
         printer = GameObject.Find("InGameUI").GetComponent<InstructionPrinter>();
         if(showMovementInstructions)
         {
-            Debug.Log("STARTING COROUTINE");
             StartCoroutine("ShowMovementInstructions");
         }
     }
@@ -45,7 +44,6 @@ public class PlayerInstructions : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log(other.gameObject.name);
         if(other.gameObject.name == "OrbInstructionTrigger" && showOrbInstructions)
         {
             showOrbInstructions = false;

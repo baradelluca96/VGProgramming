@@ -12,7 +12,6 @@ public class AudioManager : MonoBehaviour
   // Start is called before the first frame update
   void Awake()
   {
-    Debug.Log(music);
     Sound[] sounds = { jumpLanding, music };
     foreach (Sound s in sounds)
     {
