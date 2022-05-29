@@ -5,19 +5,20 @@ using UnityEngine;
 public class WaypointController : MonoBehaviour
 {
     public List<Transform> waypoints = new List<Transform>();
+    public bool loop = true;
     private Transform targetWaypoint;
     private int targetWaypointIndex = 0;
     private float minDistance = 0.1f;
     private int lastWaypointIndex;
 
-    private float movementSpeed = 0.015f;
+    public float movementSpeed = 0.015f;
     private float rotationSpeed = 1.0f; 
 
     // Start is called before the first frame update
     void Start()
     {
-        lastWaypointIndex = waypoints.Count - 1;
-        targetWaypoint = waypoints[targetWaypointIndex];
+         lastWaypointIndex = waypoints.Count - 1;
+         targetWaypoint = waypoints[targetWaypointIndex];
     }
 
     // Update is called once per frame
@@ -55,8 +56,10 @@ public class WaypointController : MonoBehaviour
 
     void UpdateTargetaypoint()
     {
+        Debug.Log(targetWaypointIndex);
+        Debug.Log(lastWaypointIndex);
         //Se finisco tutti i waypoint nella lista riparto dal primo della lista (0)
-        if(targetWaypointIndex > lastWaypointIndex) 
+        if(targetWaypointIndex > lastWaypointIndex && loop) 
         {
             targetWaypointIndex = 0;
         }

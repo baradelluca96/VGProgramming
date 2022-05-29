@@ -25,6 +25,7 @@ public class Teleport : MonoBehaviour
     }
 
     IEnumerator TeleportRoutine() {
+        Debug.Log("Sto entrando??");
         PlayerMovement script = gameObj.GetComponent<PlayerMovement>();
         script.Disable();
         gameObj.transform.position = destination.position;

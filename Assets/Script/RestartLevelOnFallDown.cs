@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class RestartLevelOnFallDown : MonoBehaviour
 {
+    private Scene scene;
 
-    [SerializeField] string strTag = "Player"; 
-    private void OnCollisionEnter(Collision collision){
-        
-        if(collision.collider.tag == strTag){   // if tag collide obj
-           SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            Debug.Log(collision.collider.tag);
-            Debug.Log(strTag);
-        } 
+    void Start() {
+        // Scena attuale
+        scene = SceneManager.GetActiveScene();
+    }
+
+    void OnTriggerEnter(Collider other){
+        // Se tocca Player allora ricomincia livello
+        if(other.gameObject.tag == "Player") {
+            Application.LoadLevel(scene.name);
+        }
     }
 }
