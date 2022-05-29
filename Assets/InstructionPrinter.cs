@@ -24,13 +24,11 @@ public class InstructionPrinter : MonoBehaviour
 
     public void RemoveMovementInstructions()
     {
-        Debug.Log("REMOVE MOV INSTRUCTIONS");
         uiHandler.unlockUI();
     }
 
     public void ShowOrbInstructions()
     {
-        Debug.Log("START SHOW ORB");
         uiHandler.showUI("orbInstructions");
     }
 
