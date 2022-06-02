@@ -1896,7 +1896,7 @@ MonoBehaviour:
   - {fileID: 1239774093}
   - {fileID: 134245235}
   loop: 0
-  movementSpeed: 0.2
+  movementSpeed: 1
 --- !u!65 &982548651
 BoxCollider:
   m_ObjectHideFlags: 0
