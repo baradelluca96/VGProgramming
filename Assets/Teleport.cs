@@ -19,8 +19,9 @@ public class Teleport : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerStay(Collider other) {
         gameObj = other.gameObject;
+        Debug.Log("Sto entrando"+other.gameObject.name);
         StartCoroutine("TeleportRoutine");
     }
 
@@ -29,6 +30,8 @@ public class Teleport : MonoBehaviour
         PlayerMovement script = gameObj.GetComponent<PlayerMovement>();
         script.Disable();
         gameObj.transform.position = destination.position;
+        gameObj.transform.rotation = destination.rotation;
+        
         yield return null;
         script.Enable();
     }
