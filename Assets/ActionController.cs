@@ -22,6 +22,8 @@ public class ActionController : MonoBehaviour
             {
                 target.GetComponent<PlayerAction>().ChannelComplete();
                 enableAction = false;
+            }else{
+                DisableAction();
             }
         }
     }
