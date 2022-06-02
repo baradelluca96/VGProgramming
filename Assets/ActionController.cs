@@ -15,9 +15,11 @@ public class ActionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("ENABLED ACTION? " + enableAction);
         if(enableAction && Input.GetButton("Action")) {
             target.GetComponent<PlayerAction>().Channel(channelStatus);
             channelStatus += Time.deltaTime + 0.5f;
+            Debug.Log("CHANNELING ON " + target.name);
             if(channelStatus >= 100f)
             {
                 target.GetComponent<PlayerAction>().ChannelComplete();
@@ -25,15 +27,21 @@ public class ActionController : MonoBehaviour
             }else{
                 DisableAction();
             }
+        }else{
+            if(channelStatus > 0f){
+                DisableAction();
+            }
         }
     }
 
-    public void EnableAction(Collider collider) {
-        target = collider.gameObject;
+    public void EnableAction(GameObject colliderObject) {
+        Debug.Log("ENABLING ACTION WITH " + colliderObject.name);
+        target = colliderObject;
         enableAction = true;
     }
     public void DisableAction() {
         target.GetComponent<PlayerAction>().ChannelInterrupt();
+        channelStatus = 0f;
         enableAction = false;
     }
 }
