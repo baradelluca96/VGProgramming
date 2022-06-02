@@ -39194,7 +39194,7 @@ MonoBehaviour:
   companionUISpeed: 5
   companionDistance: 5
   companionDistanceSide: 2
-  companionDistanceTop: 1.5
+  companionDistanceTop: 1.9
 --- !u!114 &1470445009
 MonoBehaviour:
   m_ObjectHideFlags: 0
