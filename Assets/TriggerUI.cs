@@ -9,6 +9,7 @@ public class TriggerUI : MonoBehaviour
     bool lockOpen;
     bool showAction;
     GameObject canvas;
+    GameObject actionCanvas;
     public GameObject companion;
     public float companionUISpeed = 5f;
 
@@ -21,6 +22,8 @@ public class TriggerUI : MonoBehaviour
     void Start()
     {
         canvas = GameObject.Find("InGameCanvas");
+        actionCanvas = GameObject.Find("CanvasInteract");
+        actionCanvas.SetActive(false);
         tMPtext = GameObject.Find("CompanionText").GetComponent<TMP_Text>();
         isOpen = false;
         lockOpen = false;
@@ -90,14 +93,10 @@ public class TriggerUI : MonoBehaviour
     }
 
     public void activateAction(){
-        canvas.SetActive(true);
-        tMPtext.text = "E";
-        tMPtext.alignment = TMPro.TextAlignmentOptions.Center;
+        actionCanvas.SetActive(true);
     }
 
     public void disableAction(){
-        tMPtext.text = "";
-        canvas.SetActive(false);
-        tMPtext.alignment = TMPro.TextAlignmentOptions.TopLeft;
+        actionCanvas.SetActive(false);
     }
 }

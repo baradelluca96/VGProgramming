@@ -1,31 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActionController : MonoBehaviour
 {
     GameObject target;
     float channelStatus = 0f;
     bool enableAction = false;
+    [SerializeField] GameObject fillInteraction;
+    Image fillImage;
     // Start is called before the first frame update
     void Start()
     {
+        fillImage = fillInteraction.GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("ENABLED ACTION? " + enableAction);
         if(enableAction && Input.GetButton("Action")) {
             target.GetComponent<PlayerAction>().Channel(channelStatus);
             channelStatus += Time.deltaTime + 0.5f;
-            Debug.Log("CHANNELING ON " + target.name);
+            fillImage.fillAmount = channelStatus / 100f;
             if(channelStatus >= 100f)
             {
                 target.GetComponent<PlayerAction>().ChannelComplete();
                 enableAction = false;
-            }else{
-                DisableAction();
             }
         }else{
             if(channelStatus > 0f){
@@ -42,6 +43,7 @@ public class ActionController : MonoBehaviour
     public void DisableAction() {
         target.GetComponent<PlayerAction>().ChannelInterrupt();
         channelStatus = 0f;
+        fillImage.fillAmount = 0f;
         enableAction = false;
     }
 }

@@ -16,5 +16,6 @@ public class LanternAction : PlayerAction
 
     public override void ChannelComplete(){
         Debug.Log("COMPLETED!");
+        // Remove action from this object, change the tag so that is no more targetable;
     }
 }
