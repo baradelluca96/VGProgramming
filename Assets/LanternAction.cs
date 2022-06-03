@@ -7,7 +7,7 @@ public class LanternAction : PlayerAction
     public Light orbLight;
 
     public override void Channel(float value) {
-        orbLight.intensity += 0.01f;
+        orbLight.intensity += 0.02f;
     }
 
     public override void ChannelInterrupt(){
@@ -16,6 +16,7 @@ public class LanternAction : PlayerAction
 
     public override void ChannelComplete(){
         Debug.Log("COMPLETED!");
+        gameObject.tag = "Untagged";
         // Remove action from this object, change the tag so that is no more targetable;
     }
 }
