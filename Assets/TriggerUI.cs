@@ -32,11 +32,11 @@ public class TriggerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("ToggleUI"))
+        /*if(Input.GetButtonDown("ToggleUI"))
         {
             isOpen = (isOpen || lockOpen) ? false : true;
             canvas.SetActive(isOpen || lockOpen);
-        }
+        }*/
 
         if(isOpen || lockOpen) {
             GameObject camera = GameObject.Find("Main Camera");
