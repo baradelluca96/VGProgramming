@@ -9,6 +9,8 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
     public float lockAngle = 60f;
     float xRotation = 0f;
+
+    public Light companionSpotlight;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class MouseLook : MonoBehaviour
       xRotation = Mathf.Clamp(xRotation, -lockAngle, lockAngle);
      
       playerBody.Rotate(Vector3.up * mouseX);
+      companionSpotlight.transform.rotation = Quaternion.Slerp(companionSpotlight.transform.rotation, transform.rotation, 0.5f);
       transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }
