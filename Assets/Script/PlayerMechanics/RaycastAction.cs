@@ -30,7 +30,6 @@ public class RaycastAction : MonoBehaviour
             if(hit.collider.tag == "ObjectWithAction")
             {
                 if (hit.collider.gameObject != target){
-                    Debug.Log("HIT another " + hit.collider.gameObject.name);
                     target = hit.collider.gameObject;
                     triggerUI.activateAction();
                     player.EnableAction(target);

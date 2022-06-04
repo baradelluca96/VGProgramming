@@ -13,6 +13,7 @@ public class LanternAction : PlayerAction
     }
 
     public override void ChannelInterrupt(){
+        Debug.Log("CHANNEL INTERRUPT");
         GetComponent<TeleportSound>().InterruptTeleport();
     }
 

@@ -20,6 +20,9 @@ public class ActionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(enableAction);
+        Debug.Log(Input.GetButton("Action"));
+
         if(enableAction && Input.GetButton("Action")) {
             target.GetComponent<PlayerAction>().Channel(channelStatus);
             channelStatus += Time.deltaTime + target.GetComponent<PlayerAction>().ChannelStep();
@@ -29,29 +32,20 @@ public class ActionController : MonoBehaviour
                 target.GetComponent<PlayerAction>().ChannelComplete();
                 enableAction = false;
             }
-        }else{
-            if(channelStatus > 0f){
-                if(enableAction){
-                    buttonDropped = true;
-                }
-                DisableAction();
-            }
+        }else if(enableAction && channelStatus > 0f){
+            target.GetComponent<PlayerAction>().ChannelInterrupt();
+            fillImage.fillAmount = 0f;
+            channelStatus = 0f;
         }
     }
 
     public void EnableAction(GameObject colliderObject) {
-        Debug.Log("ENABLING ACTION WITH " + colliderObject.name);
         target = colliderObject;
         enableAction = true;
     }
     public void DisableAction() {
-        target.GetComponent<PlayerAction>().ChannelInterrupt();
         channelStatus = 0f;
         fillImage.fillAmount = 0f;
-
-        if(!buttonDropped)
-        {
-            enableAction = false;
-        }
+        enableAction = false;
     }
 }
