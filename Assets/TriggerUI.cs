@@ -13,9 +13,9 @@ public class TriggerUI : MonoBehaviour
     public GameObject companion;
     public float companionUISpeed = 5f;
 
-    public float companionDistance = 5f;
-    public float companionDistanceSide = 2f;
-    public float companionDistanceTop = 1.5f;
+    public float UIcompanionDistance = 5f;
+    public float UIcompanionDistanceSide = 2f;
+    public float UIcompanionDistanceTop = 1.5f;
     string instructions;
     TMP_Text tMPtext;
     // Start is called before the first frame update
@@ -39,10 +39,7 @@ public class TriggerUI : MonoBehaviour
         }*/
 
         if(isOpen || lockOpen) {
-            GameObject camera = GameObject.Find("Main Camera");
-            Vector3 targetPosition = (camera.transform.position + camera.transform.forward * companionDistance + camera.transform.up * companionDistanceTop + camera.transform.right * companionDistanceSide);
-            float distance = Mathf.Clamp(Vector3.Distance(companion.transform.position, targetPosition), 0.005f, 100f);
-            companion.transform.position = Vector3.MoveTowards(companion.transform.position, targetPosition, companionUISpeed * Time.deltaTime * distance);
+            StepMoveCompanionOnUI();
         }
     }
 
@@ -98,5 +95,12 @@ public class TriggerUI : MonoBehaviour
 
     public void disableAction(){
         actionCanvas.SetActive(false);
+    }
+
+    public void StepMoveCompanionOnUI(){
+        GameObject camera = GameObject.Find("Main Camera");
+        Vector3 targetPosition = (camera.transform.position + camera.transform.forward * UIcompanionDistance + camera.transform.up * UIcompanionDistanceTop + camera.transform.right * UIcompanionDistanceSide);
+        float distance = Mathf.Clamp(Vector3.Distance(companion.transform.position, targetPosition), 0.005f, 100f);
+        companion.transform.position = Vector3.MoveTowards(companion.transform.position, targetPosition, companionUISpeed * Time.deltaTime * distance);
     }
 }

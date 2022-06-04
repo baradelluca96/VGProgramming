@@ -5,9 +5,13 @@ using UnityEngine;
 public class ToggleLight : MonoBehaviour
 {
     Light spotlight;
+    GameObject companion;
+    TriggerUI ui;
     // Start is called before the first frame update
     void Start()
     {
+        ui = GameObject.Find("InGameUI").GetComponent<TriggerUI>();
+        companion = GameObject.Find("Companion");
         Light spotlight = GetComponent<Light>();
         spotlight.enabled = false;
     }
@@ -19,6 +23,11 @@ public class ToggleLight : MonoBehaviour
         if(Input.GetButtonDown("ToggleUI"))
         {
             spotlight.enabled = !spotlight.enabled;
+        }
+
+        if(spotlight.enabled)
+        {
+            ui.StepMoveCompanionOnUI();
         }
     }
 }
