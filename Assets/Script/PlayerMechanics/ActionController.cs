@@ -8,6 +8,7 @@ public class ActionController : MonoBehaviour
     GameObject target;
     float channelStatus = 0f;
     bool enableAction = false;
+    bool buttonDropped = false;
     [SerializeField] GameObject fillInteraction;
     Image fillImage;
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class ActionController : MonoBehaviour
     {
         if(enableAction && Input.GetButton("Action")) {
             target.GetComponent<PlayerAction>().Channel(channelStatus);
-            channelStatus += Time.deltaTime + 0.5f;
+            channelStatus += Time.deltaTime + target.GetComponent<PlayerAction>().ChannelStep();
             fillImage.fillAmount = channelStatus / 100f;
             if(channelStatus >= 100f)
             {
@@ -30,6 +31,9 @@ public class ActionController : MonoBehaviour
             }
         }else{
             if(channelStatus > 0f){
+                if(enableAction){
+                    buttonDropped = true;
+                }
                 DisableAction();
             }
         }
@@ -44,6 +48,10 @@ public class ActionController : MonoBehaviour
         target.GetComponent<PlayerAction>().ChannelInterrupt();
         channelStatus = 0f;
         fillImage.fillAmount = 0f;
-        enableAction = false;
+
+        if(!buttonDropped)
+        {
+            enableAction = false;
+        }
     }
 }

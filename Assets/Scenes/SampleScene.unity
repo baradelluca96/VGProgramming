@@ -25488,7 +25488,8 @@ AudioSource:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8443263719383749529, guid: 3dcd6eff286e0f84c9289ac0cbbed75a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 9656b59b1448ea94dad163483cc533f7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.185
@@ -27279,6 +27280,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrbInstructionTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 8585913514413757283, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.789
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585913514413757283, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585913514413757283, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2387522500309838228, guid: 3dcd6eff286e0f84c9289ac0cbbed75a,
+        type: 2}
+    - target: {fileID: 8585913514413757283, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.541
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
 --- !u!4 &1045859723 stripped
@@ -27299,7 +27321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb96dfd28c5c34f8d8c3c69d253f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  channelStep: 0.5
   orbLight: {fileID: 1490384453}
+  channelStep: 0.35
 --- !u!1001 &1046783441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40422,20 +40446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424754d27a35a5548afff92861f8834c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpLanding:
-    name: jumpLanding
-    loop: 0
-    clip: {fileID: 8300000, guid: af486d9eba04dc74abdd7c4fa38616c2, type: 3}
-    volume: 0.5
-    pitch: 0
-    source: {fileID: 0}
-  music:
-    name: themeTemp
-    loop: 1
-    clip: {fileID: 8300000, guid: 9656b59b1448ea94dad163483cc533f7, type: 3}
-    volume: 0.832
-    pitch: 0
-    source: {fileID: 0}
+  soundFiles: []
 --- !u!4 &1510784963
 Transform:
   m_ObjectHideFlags: 0
@@ -44453,7 +44464,8 @@ AudioSource:
   m_GameObject: {fileID: 1734739904}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8846140968319981545, guid: 3dcd6eff286e0f84c9289ac0cbbed75a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 9d36e13b8426ddf47b82132b3aa2f800, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
