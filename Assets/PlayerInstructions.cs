@@ -6,6 +6,7 @@ public class PlayerInstructions : MonoBehaviour
 {
     [SerializeField] bool showMovementInstructions;
     [SerializeField] bool showOrbInstructions;
+    [SerializeField] bool showTorchLightInstructions;
     [SerializeField] float showMovementInstructionsAfter = 2.5f;
     bool hasMoved = false;
     InstructionPrinter printer;
@@ -38,9 +39,9 @@ public class PlayerInstructions : MonoBehaviour
         }
     }
 
-    IEnumerator RemoveOrbInstrucitons() {
+    IEnumerator RemoveInstrucitons() {
         yield return new WaitForSeconds(8f);
-        printer.RemoveOrbInstructions();
+        printer.RemoveInstructions();
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -48,7 +49,14 @@ public class PlayerInstructions : MonoBehaviour
         {
             showOrbInstructions = false;
             printer.ShowOrbInstructions();
-            StartCoroutine("RemoveOrbInstrucitons");
+            StartCoroutine("RemoveInstrucitons");
+        }
+
+        if(other.gameObject.name == "TorchInstructionTrigger" && showTorchLightInstructions)
+        {
+            showTorchLightInstructions = false;
+            printer.ShowTorchInstructions();
+            StartCoroutine("RemoveInstrucitons");
         }
     }
 }

@@ -32,8 +32,13 @@ public class InstructionPrinter : MonoBehaviour
         uiHandler.showUI("orbInstructions");
     }
 
-    public void RemoveOrbInstructions()
+    public void RemoveInstructions()
     {
         uiHandler.unlockUI();
+    }
+
+    public void ShowTorchInstructions()
+    {
+        uiHandler.showUI("torchInstructions");
     }
 }

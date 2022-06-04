@@ -47,15 +47,7 @@ public class TriggerUI : MonoBehaviour
     {
         lockOpen = true;
         canvas.SetActive(true);
-        if(policy == "movement")
-        {
-            instructions = "Forse il viaggio ti ha stordito, ricordati che per muoverti devi premere i tasti W,A,S o D! Per guardarti attorno usa il mouse!";
-        }else if(policy == "orbInstructions")
-        {
-            instructions = "Questa sembra un fonte di energia sufficiente per un viaggio solo!";
-        }else {
-            instructions = "Error: Unhandled case!";
-        }
+        instructions = GetInstructionsText(policy);
 
         StartCoroutine("DisplayInstruction");
     }
@@ -102,5 +94,24 @@ public class TriggerUI : MonoBehaviour
         Vector3 targetPosition = (camera.transform.position + camera.transform.forward * UIcompanionDistance + camera.transform.up * UIcompanionDistanceTop + camera.transform.right * UIcompanionDistanceSide);
         float distance = Mathf.Clamp(Vector3.Distance(companion.transform.position, targetPosition), 0.005f, 100f);
         companion.transform.position = Vector3.MoveTowards(companion.transform.position, targetPosition, companionUISpeed * Time.deltaTime * distance);
+    }
+
+    private string GetInstructionsText(string policy){
+        switch(policy)
+        {
+            case "movement":
+                return "Forse il viaggio ti ha stordito, ricordati che per muoverti devi premere i tasti W,A,S o D! Per guardarti attorno usa il mouse!";
+                break;
+
+            case "orbInstructions":
+                return "Questa sembra un fonte di energia sufficiente per un viaggio solo!";
+                break;
+
+            case "torchInstructions":
+                return "Ricordati che ho una luce integrata, se vuoi attivarla premi il tasto Q!";
+
+            default:
+                return "Unhandled case: " + policy;
+        }
     }
 }
