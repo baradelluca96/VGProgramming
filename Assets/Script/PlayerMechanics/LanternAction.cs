@@ -8,10 +8,11 @@ public class LanternAction : PlayerAction
 
     public override void Channel(float value) {
         orbLight.intensity += 0.02f;
+        GetComponent<TeleportSound>().TriggerTeleport();
     }
 
     public override void ChannelInterrupt(){
-        Debug.Log("INTERRUPT");
+        GetComponent<TeleportSound>().InterruptTeleport();
     }
 
     public override void ChannelComplete(){

@@ -5,14 +5,13 @@ using System;
 public class AudioManager : MonoBehaviour
 {
 
-  public Sound jumpLanding;
-  public Sound music;
+  [SerializeField] Sound[] soundFiles;
 
   [HideInInspector]
   // Start is called before the first frame update
   void Awake()
   {
-    Sound[] sounds = { jumpLanding, music };
+    Sound[] sounds = { };
     foreach (Sound s in sounds)
     {
       s.source = gameObject.AddComponent<AudioSource>();
@@ -26,7 +25,7 @@ public class AudioManager : MonoBehaviour
   // Update is called once per frame
   public void Play(string name)
   {
-    Sound[] sounds = { jumpLanding, music };
+    Sound[] sounds = { };
     Debug.Log(sounds);
     Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)

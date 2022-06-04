@@ -101,11 +101,9 @@ public class TriggerUI : MonoBehaviour
         {
             case "movement":
                 return "Forse il viaggio ti ha stordito, ricordati che per muoverti devi premere i tasti W,A,S o D! Per guardarti attorno usa il mouse!";
-                break;
 
             case "orbInstructions":
                 return "Questa sembra un fonte di energia sufficiente per un viaggio solo!";
-                break;
 
             case "torchInstructions":
                 return "Ricordati che ho una luce integrata, se vuoi attivarla premi il tasto Q!";
