@@ -24719,6 +24719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927199195}
+  - component: {fileID: 927199196}
   m_Layer: 0
   m_Name: Companion
   m_TagString: Untagged
@@ -24743,6 +24744,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927199196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927199194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb188b0bb87796488e7bf64c2c8ba1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &929154289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27502,7 +27516,7 @@ Transform:
   - {fileID: 1053900610}
   - {fileID: 1053900312}
   m_Father: {fileID: 1443469129}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1053900288
 Transform:
@@ -38869,7 +38883,6 @@ Transform:
   - {fileID: 963194228}
   - {fileID: 790614944}
   - {fileID: 1510784963}
-  - {fileID: 1954297188}
   - {fileID: 1053898764}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -38925,10 +38938,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e02b6494c63b3345948f85c2b81ecb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionPoint: {fileID: 1954297188}
+  _interactionPoint: {fileID: 0}
   _interactionPointRadius: 2
   _interactableMask:
-    serializedVersion: 2
     m_Bits: 256
   _numFound: 0
 --- !u!114 &1443469133
@@ -38945,6 +38957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showMovementInstructions: 1
   showOrbInstructions: 1
+  showTorchLightInstructions: 0
   showMovementInstructionsAfter: 2.5
 --- !u!114 &1443469134
 MonoBehaviour:
@@ -39606,9 +39619,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companion: {fileID: 927199194}
   companionUISpeed: 5
-  companionDistance: 5
-  companionDistanceSide: 2
-  companionDistanceTop: 1.9
+  UIcompanionDistance: 5
+  UIcompanionDistanceSide: 2
+  UIcompanionDistanceTop: 1.5
 --- !u!114 &1470445009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48421,37 +48434,6 @@ Transform:
   - {fileID: 1534456485}
   m_Father: {fileID: 688771499}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1954297187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1954297188}
-  m_Layer: 0
-  m_Name: InteractionPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1954297188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954297187}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.805, z: 0.83}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1443469129}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1957927434
 PrefabInstance:
