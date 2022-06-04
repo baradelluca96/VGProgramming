@@ -22,7 +22,7 @@ public class ActionController : MonoBehaviour
     {
         if(enableAction && Input.GetButton("Action")) {
             target.GetComponent<PlayerAction>().Channel(channelStatus);
-            channelStatus += Time.deltaTime + 0.5f;
+            channelStatus += Time.deltaTime + target.GetComponent<PlayerAction>().ChannelStep();
             fillImage.fillAmount = channelStatus / 100f;
             if(channelStatus >= 100f)
             {
