@@ -27,18 +27,18 @@ public class ChasePlayer : MonoBehaviour
             {
                 FollowTarget();
             }else{
-                // STOP;
+                FollowPath();
             }
         }else{
-            //FollowPath();
+            FollowPath();
         }
     }
 
     void FollowTarget()
     {
-        Debug.Log("Following Player");
         if (isStillVisible)
         {
+            GetComponent<FollowWaypoint>().ChasePlayer();
             float step = speed * Time.deltaTime;
             Debug.Log(Vector3.MoveTowards(transform.position, target.position, step));
             body.MovePosition(Vector3.MoveTowards(transform.position, target.position, step));
@@ -46,5 +46,10 @@ public class ChasePlayer : MonoBehaviour
             Vector3 relativePos = target.position - transform.position;
             body.rotation = Quaternion.LookRotation(relativePos, Vector3.up);
         }
+    }
+
+    void FollowPath()
+    {
+        GetComponent<FollowWaypoint>().ReturnToPath();
     }
 }

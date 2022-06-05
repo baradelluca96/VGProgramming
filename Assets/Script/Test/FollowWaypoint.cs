@@ -29,4 +29,14 @@ public class FollowWaypoint : MonoBehaviour
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
     }
+
+    public void ChasePlayer()
+    {
+        isChasing = true;
+    }
+
+    public void ReturnToPath()
+    {
+        isChasing = false;
+    }
 }
