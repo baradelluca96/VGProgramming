@@ -23,6 +23,7 @@ public class FollowWaypoint : MonoBehaviour
     {
         if(!isChasing)
         {
+            Walk();
             if(Vector3.Distance(transform.position, waypoints[currentWP].transform.position) < 3f)
             {
                 currentWP = (currentWP + 1) % waypoints.Length;
@@ -49,11 +50,11 @@ public class FollowWaypoint : MonoBehaviour
 
     private void Walk()
     {
-        anim.SetFloat("Blend", 0.5f, 0.1f, Time.deltaTime);
+        anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
     }
 
     private void Run()
     {
-        anim.SetFloat("Blend", 0.98f, 0.1f, Time.deltaTime);
+        anim.SetFloat("Speed", 0.98f, 0.1f, Time.deltaTime);
     }
 }
