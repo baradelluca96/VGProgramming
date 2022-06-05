@@ -9,9 +9,13 @@ public class FollowWaypoint : MonoBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] float rotationSpeed = 2f;
     bool isChasing = false;
+
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -27,16 +31,29 @@ public class FollowWaypoint : MonoBehaviour
             Quaternion lookAtWaypont = Quaternion.LookRotation(waypoints[currentWP].transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookAtWaypont, Time.deltaTime * rotationSpeed);
             transform.Translate(0, 0, speed * Time.deltaTime);
+            
         }
     }
 
     public void ChasePlayer()
     {
+        Run();
         isChasing = true;
     }
 
     public void ReturnToPath()
     {
+        Walk();
         isChasing = false;
+    }
+
+    private void Walk()
+    {
+        anim.SetFloat("Blend", 0.5f, 0.1f, Time.deltaTime);
+    }
+
+    private void Run()
+    {
+        anim.SetFloat("Blend", 0.98f, 0.1f, Time.deltaTime);
     }
 }

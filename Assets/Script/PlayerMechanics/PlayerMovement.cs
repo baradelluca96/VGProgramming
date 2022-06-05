@@ -17,10 +17,20 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     Vector3 velocity;
+    private Vector3 moveDirection;
+
     bool isGrounded;
     bool disabled;
 
     public bool invertMovement;
+
+    private Animator anim;
+    
+    private void Start()
+    {
+      controller = GetComponent<CharacterController>();
+      anim = GetComponentInChildren<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -42,27 +52,38 @@ public class PlayerMovement : MonoBehaviour
           x = Input.GetAxis("Horizontal") * -1;
           z = Input.GetAxis("Vertical") * -1;
         }
-        
 
         bool pressed = Input.GetKey("left shift");
         float currentSpeed = baseSpeed;
-        if (pressed)
-          {
-            currentSpeed = currentSpeed * 2;
-          }
-
-        if(Input.GetButtonDown("Jump") && isGrounded)
-          {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-          }
-
         Vector3 move = transform.right * x + transform.forward * z;
-
         controller.Move(move * currentSpeed * Time.deltaTime);
 
         velocity.y += gravity * Time.deltaTime; // Current speed with acceleration, framerate independent;
 
         controller.Move(velocity * Time.deltaTime); // Real movement, should be framerate independent too, not connected to previous delta fix;
+     
+        /* if (pressed)
+          {
+            currentSpeed = currentSpeed * 2;
+          }
+        */
+        if(move != Vector3.zero && !pressed)
+        {
+          Walk();
+        }
+        else if(move != Vector3.zero && pressed)
+        {
+          Run();
+        }
+        else if(move == Vector3.zero)
+        {
+          Idle();
+        }
+
+        if(Input.GetButtonDown("Jump") && isGrounded)
+          {
+            Jump();
+          }  
       }
     }
 
@@ -74,5 +95,27 @@ public class PlayerMovement : MonoBehaviour
     public bool Enable() {
       disabled = false;
       return disabled;
+    }
+
+    private void Idle()
+    {
+      anim.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
+    }
+
+    private void Walk()
+    {
+      anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
+    }
+
+    private void Run()
+    {
+      float currentSpeed = baseSpeed;
+      currentSpeed = currentSpeed * 2;
+      anim.SetFloat("Speed", 0.98f, 0.1f, Time.deltaTime);
+    }
+
+    private void Jump(){
+      velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+      anim.SetTrigger("Jump");
     }
 }
