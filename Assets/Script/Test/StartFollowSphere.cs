@@ -18,5 +18,6 @@ public class StartFollowSphere : MonoBehaviour
         wallStopSphere.SetActive(false);
         Sphere.GetComponent<WaypointController>().enabled = true;
         rotationSphere.GetComponent<SphereRotation>().enabled = true;
+        rotationSphere.GetComponent<SphereRotation>().Pause = false;
     }
 }

@@ -6,7 +6,7 @@ public class SphereRotation : MonoBehaviour
 {
     public float RotationAmount = 2f;
     public int TicksPerSecond = 60;
-    public bool Pause = false;
+    public bool Pause = true;
 
     private void Start() {
         StartCoroutine(Rotate());
