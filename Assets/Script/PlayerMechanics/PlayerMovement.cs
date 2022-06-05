@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -100f; // Fixed gravity -9.81f;
     public float jumpHeight = 5f;
 
+    float x;
+    float z;
+
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -17,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     bool disabled;
 
+    public bool invertMovement;
     // Update is called once per frame
     void Update()
     {
@@ -31,8 +35,14 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f; // A constance force pushing on the ground;
           }
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        if (!invertMovement){
+          x = Input.GetAxis("Horizontal");
+          z = Input.GetAxis("Vertical");
+        }else{
+          x = Input.GetAxis("Horizontal") * -1;
+          z = Input.GetAxis("Vertical") * -1;
+        }
+        
 
         bool pressed = Input.GetKey("left shift");
         float currentSpeed = baseSpeed;
