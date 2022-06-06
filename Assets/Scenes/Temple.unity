@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45126426, g: 0.5000619, b: 0.56861466, a: 1}
+  m_IndirectSpecularColor: {r: 0.4512636, g: 0.5000613, b: 0.56861377, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2112,10 +2112,10 @@ RectTransform:
   m_Father: {fileID: 2027625015}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -229.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: -714, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111295578
 MonoBehaviour:
@@ -19373,10 +19373,10 @@ RectTransform:
   m_Father: {fileID: 1037950078}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 600}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -40}
+  m_SizeDelta: {x: -170, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699219471
 MonoBehaviour:
@@ -24756,7 +24756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb188b0bb87796488e7bf64c2c8ba1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &929154289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27321,9 +27320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb96dfd28c5c34f8d8c3c69d253f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  channelStep: 0.5
   orbLight: {fileID: 1490384453}
-  channelStep: 0.35
+  channelStepValue: 0.4
 --- !u!1001 &1046783441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38900,7 +38898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443469127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 538.76, y: 12.21, z: 485.93}
+  m_LocalPosition: {x: 448.2, y: 4, z: 292.3}
   m_LocalScale: {x: 2, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38932,6 +38930,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  invertMovement: 0
 --- !u!114 &1443469131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38962,11 +38961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e02b6494c63b3345948f85c2b81ecb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionPoint: {fileID: 0}
-  _interactionPointRadius: 2
-  _interactableMask:
-    m_Bits: 256
-  _numFound: 0
 --- !u!114 &1443469133
 MonoBehaviour:
   m_ObjectHideFlags: 0
