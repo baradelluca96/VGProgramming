@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InnerTempleVol
   - ObjectWithAction
+  - platform
   layers:
   - Default
   - TransparentFX
