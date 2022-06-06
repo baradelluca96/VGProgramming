@@ -36,7 +36,6 @@ public class FieldOfView : MonoBehaviour
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
-Debug.Log(rangeChecks);
         if (rangeChecks.Length > 0)
         {
             Transform target = rangeChecks[0].transform; // Only the player is returned;
