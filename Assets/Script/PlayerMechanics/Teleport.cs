@@ -21,12 +21,10 @@ public class Teleport : MonoBehaviour
 
     void OnTriggerStay(Collider other) {
         gameObj = other.gameObject;
-        Debug.Log("Sto entrando"+other.gameObject.name);
         StartCoroutine("TeleportRoutine");
     }
 
     IEnumerator TeleportRoutine() {
-        Debug.Log("Sto entrando??");
         PlayerMovement script = gameObj.GetComponent<PlayerMovement>();
         script.Disable();
         gameObj.transform.position = destination.position;

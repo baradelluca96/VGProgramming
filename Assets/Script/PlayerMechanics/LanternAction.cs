@@ -13,12 +13,10 @@ public class LanternAction : PlayerAction
     }
 
     public override void ChannelInterrupt(){
-        Debug.Log("CHANNEL INTERRUPT");
         GetComponent<TeleportSound>().InterruptTeleport();
     }
 
     public override void ChannelComplete(){
-        Debug.Log("COMPLETED!");
         gameObject.tag = "Untagged";
         // Remove action from this object, change the tag so that is no more targetable;
     }

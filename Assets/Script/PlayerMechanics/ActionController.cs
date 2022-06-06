@@ -20,9 +20,6 @@ public class ActionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(enableAction);
-        Debug.Log(Input.GetButton("Action"));
-
         if(enableAction && Input.GetButton("Action")) {
             target.GetComponent<PlayerAction>().Channel(channelStatus);
             channelStatus += Time.deltaTime + target.GetComponent<PlayerAction>().ChannelStep();

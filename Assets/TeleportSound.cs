@@ -21,7 +21,6 @@ public class TeleportSound : MonoBehaviour
     public void TriggerTeleport()
     {
         if(!isPlaying){
-            Debug.Log("Playing Main Sound");
             int index = Random.Range(0, teleportClips.Length);
             audioSource.clip = teleportClips[index];
             audioSource.Play();
@@ -33,7 +32,6 @@ public class TeleportSound : MonoBehaviour
     {
         if(isPlaying)
         {
-            Debug.Log("Playing Discharge");
             audioSource.Stop();
             audioSource.clip = discharge;
             audioSource.Play();

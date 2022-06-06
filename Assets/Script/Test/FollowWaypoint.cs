@@ -1,42 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FollowWaypoint : MonoBehaviour
 {
     [SerializeField] GameObject[] waypoints;
     int currentWP = 0;
-    [SerializeField] float speed = 5f;
-    [SerializeField] float rotationSpeed = 2f;
-    bool isChasing = false;
+    NavMeshAgent navMeshAgent;
+    FieldOfView fov;
     // Start is called before the first frame update
     void Start()
     {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        fov = GetComponent<FieldOfView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!isChasing)
+        if(fov.canSeePlayer)
         {
+            navMeshAgent.destination = fov.playerRef.transform.position;
+        }else{
             if(Vector3.Distance(transform.position, waypoints[currentWP].transform.position) < 3f)
             {
                 currentWP = (currentWP + 1) % waypoints.Length;
             }
 
-            Quaternion lookAtWaypont = Quaternion.LookRotation(waypoints[currentWP].transform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookAtWaypont, Time.deltaTime * rotationSpeed);
-            transform.Translate(0, 0, speed * Time.deltaTime);
+            navMeshAgent.destination = waypoints[currentWP].transform.position;
         }
-    }
-
-    public void ChasePlayer()
-    {
-        isChasing = true;
-    }
-
-    public void ReturnToPath()
-    {
-        isChasing = false;
     }
 }
