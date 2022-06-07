@@ -102,11 +102,22 @@ public class TriggerUI : MonoBehaviour
             case "movement":
                 return "Forse il viaggio ti ha stordito, ricordati che per muoverti devi premere i tasti W,A,S o D! Per guardarti attorno usa il mouse!";
 
-            case "orbInstructions":
+            case "orbInstructions1":
                 return "Questa sembra un fonte di energia sufficiente per un viaggio solo!";
+
+            case "orbInstructions2":
+                return "Avvicinati e prova a premere E per fare in modo riesca a sfruttare l'energia e trovare il primo pezzo!";
 
             case "torchInstructions":
                 return "Ricordati che ho una luce integrata, se vuoi attivarla premi il tasto Q!";
+            case "dialogue1":
+                return "Ehi, pare tu abbia perso la memoria, un'anomalia nel viaggio temporale ci ha fatto uscire di rotta e ora la nave è fuori uso.";
+            case "dialogue2":
+                return "Sembra che abbiamo perso alcuni pezzi, li ho identificati e sono dispersi nel tempo, precisamente in 3 luoghi e tempi diversi.";
+            case "dialogue3":
+                return "Rilevo alcune fonti di energia nelle vicinanze...";
+            case "dialogue4":
+                return "... forse possiamo sfruttarle per viaggiare nel tempo e recuperare i pezzi per le riparazioni.";
 
             default:
                 return "Unhandled case: " + policy;

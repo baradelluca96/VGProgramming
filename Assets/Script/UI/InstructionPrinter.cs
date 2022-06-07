@@ -27,9 +27,9 @@ public class InstructionPrinter : MonoBehaviour
         uiHandler.unlockUI();
     }
 
-    public void ShowOrbInstructions()
+    public void ShowOrbInstructions(int index)
     {
-        uiHandler.showUI("orbInstructions");
+        uiHandler.showUI("orbInstructions" + index);
     }
 
     public void RemoveInstructions()
@@ -40,5 +40,10 @@ public class InstructionPrinter : MonoBehaviour
     public void ShowTorchInstructions()
     {
         uiHandler.showUI("torchInstructions");
+    }
+
+    public void PrintInitialDialogue(int index)
+    {
+        uiHandler.showUI("dialogue" + index);
     }
 }
