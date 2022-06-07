@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Piramid.unity
-    guid: 87e08c48cc13d2a4e9f5afc686e9c7a2
+    guid: dc8ab1018ee423747b3a63b83c6ea574
   - enabled: 1
     path: Assets/Scenes/Run.unity
     guid: e71a86d8fc5a29b4d9ddd60b4f6420f8

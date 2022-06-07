@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45126426, g: 0.5000619, b: 0.56861466, a: 1}
+  m_IndirectSpecularColor: {r: 0.4512636, g: 0.5000613, b: 0.56861377, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27320,6 +27320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb96dfd28c5c34f8d8c3c69d253f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IDScene: 4
   orbLight: {fileID: 1490384453}
   channelStepValue: 0.4
 --- !u!1001 &1046783441
@@ -36466,6 +36467,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1331004761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1331004763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013598317750, guid: 605c5179c270f51458f90168a90b72a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1331004761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1331004764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331004763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfb96dfd28c5c34f8d8c3c69d253f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IDScene: 3
+  orbLight: {fileID: 779419953}
+  channelStepValue: 0.4
 --- !u!1001 &1331299688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38977,7 +38999,9 @@ MonoBehaviour:
   showMovementInstructions: 1
   showOrbInstructions: 1
   showTorchLightInstructions: 0
-  showMovementInstructionsAfter: 2.5
+  showLabDialogue: 0
+  showOxygenInstructions: 0
+  showVillageDialogue: 0
 --- !u!114 &1443469134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46517,6 +46541,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1847547805}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1847547807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013598317750, guid: 605c5179c270f51458f90168a90b72a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1847547805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1847547808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847547807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfb96dfd28c5c34f8d8c3c69d253f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IDScene: 2
+  orbLight: {fileID: 1356436716}
+  channelStepValue: 0.4
 --- !u!1001 &1849342828
 PrefabInstance:
   m_ObjectHideFlags: 0
