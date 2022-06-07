@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class PlayerInstructions : MonoBehaviour
 {
+    [SerializeField] bool showInitialDialogue;
     [SerializeField] bool showMovementInstructions;
     [SerializeField] bool showOrbInstructions;
     [SerializeField] bool showTorchLightInstructions;
-    [SerializeField] float showMovementInstructionsAfter = 2.5f;
+    [SerializeField] bool showLabDialogue;
+    [SerializeField] bool showOxygenInstructions;
+    [SerializeField] bool showVillageDialogue;
     bool hasMoved = false;
+    bool displayedMovementInstructions = false;
     InstructionPrinter printer;
     // Start is called before the first frame update
     void Start()
     {
         printer = GameObject.Find("InGameUI").GetComponent<InstructionPrinter>();
-        if(showMovementInstructions)
+        if(showInitialDialogue)
         {
-            StartCoroutine("ShowMovementInstructions");
+            StartCoroutine("ShowInitialDialogue");
+        }else if(showLabDialogue)
+        {
+            StartCoroutine("ShowInitialLabDialogue");
+        }else if(showVillageDialogue)
+        {
+            StartCoroutine("ShowVillageDialogue");
         }
     }
 
@@ -27,36 +37,110 @@ public class PlayerInstructions : MonoBehaviour
         {
             hasMoved = true;
             showMovementInstructions = false;
-            printer.RemoveMovementInstructions();
+            if(displayedMovementInstructions)
+            {
+                printer.RemoveMovementInstructions();
+            }
+        }
+    }
+
+    IEnumerator ShowInitialDialogue(){
+        yield return new WaitForSeconds(1f);
+        printer.PrintInitialDialogue(1);
+        yield return new WaitForSeconds(8f);
+
+        printer.PrintInitialDialogue(2);
+        yield return new WaitForSeconds(8f);
+
+        printer.PrintInitialDialogue(3);
+        yield return new WaitForSeconds(4f);
+
+        printer.PrintInitialDialogue(4);
+        yield return new WaitForSeconds(5f);
+
+        if(showMovementInstructions)
+        {
+            StartCoroutine("ShowMovementInstructions");
+            displayedMovementInstructions = true;
+        }else
+        {
+            StartCoroutine("RemoveInstructions");
         }
     }
 
     IEnumerator ShowMovementInstructions() {
-        yield return new WaitForSeconds(showMovementInstructionsAfter);
+        yield return new WaitForSeconds(2.5f);
         if(!hasMoved)
         {
             printer.PrintMovementInstructions();
         }
     }
 
-    IEnumerator RemoveInstrucitons() {
-        yield return new WaitForSeconds(8f);
+    IEnumerator RemoveInstructions() {
         printer.RemoveInstructions();
+        yield return null;
     }
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.name == "OrbInstructionTrigger" && showOrbInstructions)
         {
-            showOrbInstructions = false;
-            printer.ShowOrbInstructions();
-            StartCoroutine("RemoveInstrucitons");
+            StartCoroutine("ShowOrbInstructions");
         }
 
-        if(other.gameObject.name == "TorchInstructionTrigger" && showTorchLightInstructions)
+        if(other.gameObject.name == "TorchInstructionsTrigger" && showTorchLightInstructions)
         {
+            StopCoroutine("DelayedRemoveInstructions");
             showTorchLightInstructions = false;
             printer.ShowTorchInstructions();
-            StartCoroutine("RemoveInstrucitons");
+            StartCoroutine("DelayedRemoveInstructions");
         }
+
+        if(other.gameObject.name == "OxygenInstructionsTrigger" && showOxygenInstructions)
+        {
+            StopCoroutine("DelayedRemoveInstructions");
+            showOxygenInstructions = false;
+            printer.ShowOxygenInstructions();
+            StartCoroutine("DelayedRemoveInstructions");
+
+        }
+    }
+
+    IEnumerator ShowOrbInstructions(){
+        showOrbInstructions = false;
+        printer.ShowOrbInstructions(1);
+        yield return new WaitForSeconds(6f);
+        printer.ShowOrbInstructions(2);
+        yield return new WaitForSeconds(6f);
+        StartCoroutine("RemoveInstructions");
+    }
+
+    IEnumerator ShowInitialLabDialogue() {
+        yield return new WaitForSeconds(1f);
+        printer.PrintInitialLabDialogue(1);
+        yield return new WaitForSeconds(8f);
+
+        printer.PrintInitialLabDialogue(2);
+        yield return new WaitForSeconds(8f);
+
+        StartCoroutine("RemoveInstructions");
+    }
+
+    IEnumerator ShowVillageDialogue() {
+        yield return new WaitForSeconds(1f);
+        printer.PrintVillageDialogue(1);
+        yield return new WaitForSeconds(8f);
+
+        printer.PrintVillageDialogue(2);
+        yield return new WaitForSeconds(8f);
+
+        printer.PrintVillageDialogue(3);
+        yield return new WaitForSeconds(8f);
+
+        StartCoroutine("RemoveInstructions");
+    }
+
+    IEnumerator DelayedRemoveInstructions(){
+        yield return new WaitForSeconds(8f);
+        StartCoroutine("RemoveInstructions");
     }
 }

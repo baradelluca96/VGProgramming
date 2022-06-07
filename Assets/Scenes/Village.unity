@@ -56868,10 +56868,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de73ef9ae002f504ba8f0d1c6567e336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showMovementInstructions: 1
-  showOrbInstructions: 1
+  showInitialDialogue: 0
+  showMovementInstructions: 0
+  showOrbInstructions: 0
   showTorchLightInstructions: 0
-  showMovementInstructionsAfter: 2.5
+  showLabDialogue: 0
+  showOxygenInstructions: 0
+  showVillageDialogue: 1
 --- !u!114 &1943421118
 MonoBehaviour:
   m_ObjectHideFlags: 0
