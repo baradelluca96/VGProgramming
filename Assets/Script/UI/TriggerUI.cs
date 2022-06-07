@@ -127,6 +127,13 @@ public class TriggerUI : MonoBehaviour
             case "oxygenInstructions":
                 return "Rilevo una bassissima concentrazione di ossigeno all'interno. Preparati a trattenere il respiro!";
 
+            case "villageDialogue1":
+                return "Sembra siamo finiti in un villaggio disabitato... Dobbiamo trovare il pezzo! Oh no!";
+            case "villageDialogue2":
+                return "Sembra che non siamo soli! Ti stanno cercando, forse per qualcosa che hai dimenticato di aver fatto!";
+            case "villageDialogue3":
+                return "Cerca di non farti vedere, e se ti vedono nasconditi!";
+
             default:
                 return "Unhandled case: " + policy;
         }

@@ -10,6 +10,7 @@ public class PlayerInstructions : MonoBehaviour
     [SerializeField] bool showTorchLightInstructions;
     [SerializeField] bool showLabDialogue;
     [SerializeField] bool showOxygenInstructions;
+    [SerializeField] bool showVillageDialogue;
     bool hasMoved = false;
     bool displayedMovementInstructions = false;
     InstructionPrinter printer;
@@ -23,6 +24,9 @@ public class PlayerInstructions : MonoBehaviour
         }else if(showLabDialogue)
         {
             StartCoroutine("ShowInitialLabDialogue");
+        }else if(showVillageDialogue)
+        {
+            StartCoroutine("ShowVillageDialogue");
         }
     }
 
@@ -116,6 +120,20 @@ public class PlayerInstructions : MonoBehaviour
         yield return new WaitForSeconds(8f);
 
         printer.PrintInitialLabDialogue(2);
+        yield return new WaitForSeconds(8f);
+
+        StartCoroutine("RemoveInstructions");
+    }
+
+    IEnumerator ShowVillageDialogue() {
+        yield return new WaitForSeconds(1f);
+        printer.PrintVillageDialogue(1);
+        yield return new WaitForSeconds(8f);
+
+        printer.PrintVillageDialogue(2);
+        yield return new WaitForSeconds(8f);
+
+        printer.PrintVillageDialogue(3);
         yield return new WaitForSeconds(8f);
 
         StartCoroutine("RemoveInstructions");
