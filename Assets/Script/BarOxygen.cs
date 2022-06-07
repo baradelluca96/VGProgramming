@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BarOxygen : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class BarOxygen : MonoBehaviour
     public GameObject collider;
 
     private int scaleID;
+
+    private Scene scene;
 
     public void Start() {
         bg.SetActive(false);
@@ -37,6 +40,11 @@ public class BarOxygen : MonoBehaviour
         while( currentTime <= time ) {
             currentTime += 0.1f;
             slideBar.fillAmount -=  0.1f / time;
+            if(slideBar.fillAmount < 0.09f){
+                Debug.Log("Eccoci: "+ slideBar.fillAmount);
+                Debug.Log("Name: "+ scene.name);
+                Application.LoadLevel(scene.name);
+            }
             yield return new WaitForSeconds(0.1f);
         }
     }
