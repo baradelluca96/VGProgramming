@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class BarOssygen : MonoBehaviour
+public class BarOxygen : MonoBehaviour
 {
     public GameObject bg;
     public GameObject bar;
@@ -21,11 +21,15 @@ public class BarOssygen : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        bar.SetActive(true);
-        bg.SetActive(true);     
-        slideBar = bar.GetComponent<Image>();
 
-        StartCoroutine("StartOxygenBar");
+        if(other.gameObject.name == "OxygenRequired")
+        {
+            bar.SetActive(true);
+            bg.SetActive(true);     
+            slideBar = bar.GetComponent<Image>();
+
+            StartCoroutine("StartOxygenBar");
+        }
     }
 
     IEnumerator StartOxygenBar(){
@@ -38,10 +42,13 @@ public class BarOssygen : MonoBehaviour
     }
     
     void OnTriggerExit(Collider other) {
-        bar.SetActive(false);
-        bg.SetActive(false);
-        currentTime = 0f;
-        StopCoroutine("StartOxygenBar");
+        if(other.gameObject.name == "OxygenRequired")
+        {
+            bar.SetActive(false);
+            bg.SetActive(false);
+            currentTime = 0f;
+            StopCoroutine("StartOxygenBar");
+        }
     }
 
 }

@@ -109,7 +109,7 @@ public class TriggerUI : MonoBehaviour
                 return "Avvicinati e prova a premere E per fare in modo riesca a sfruttare l'energia e trovare il primo pezzo!";
 
             case "torchInstructions":
-                return "Ricordati che ho una luce integrata, se vuoi attivarla premi il tasto Q!";
+                return "Sembra piuttosto buio! Ricordati che ho una luce integrata, se vuoi attivarla premi il tasto Q!";
             case "dialogue1":
                 return "Ehi, pare tu abbia perso la memoria, un'anomalia nel viaggio temporale ci ha fatto uscire di rotta e ora la nave è fuori uso.";
             case "dialogue2":
@@ -118,6 +118,14 @@ public class TriggerUI : MonoBehaviour
                 return "Rilevo alcune fonti di energia nelle vicinanze...";
             case "dialogue4":
                 return "... forse possiamo sfruttarle per viaggiare nel tempo e recuperare i pezzi per le riparazioni.";
+
+            case "labDialogue1":
+                return "Siamo finiti in una zona misteriosa. Attenzione a non cadere!";
+            case "labDialogue2":
+                return " Sembra ci sia un ingresso laggiù. Il segnale proviene dall'interno di quella struttura.";
+
+            case "oxygenInstructions":
+                return "Rilevo una bassissima concentrazione di ossigeno all'interno. Preparati a trattenere il respiro!";
 
             default:
                 return "Unhandled case: " + policy;
