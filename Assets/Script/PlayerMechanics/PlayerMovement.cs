@@ -26,10 +26,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator anim;
     
+    private GameObject playerModel;
+
     private void Start()
     {
       controller = GetComponent<CharacterController>();
       anim = GetComponentInChildren<Animator>();
+      playerModel = GameObject.Find("Ellen");
     }
     // Update is called once per frame
     void Update()
@@ -61,6 +64,11 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime; // Current speed with acceleration, framerate independent;
 
         controller.Move(velocity * Time.deltaTime); // Real movement, should be framerate independent too, not connected to previous delta fix;
+
+        if (invertMovement && move != Vector3.zero)
+        {
+          playerModel.transform.forward = move;
+        }
      
         /* if (pressed)
           {
