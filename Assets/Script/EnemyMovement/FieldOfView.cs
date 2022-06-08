@@ -15,11 +15,14 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstructionMask;
 
     public bool canSeePlayer; 
+    private Animator anim;
+
     void Start()
     {
         playerRef = GameObject.Find("Player");
         StartCoroutine("FOVRoutine");
         canSeePlayer = false;
+        anim = GetComponentInChildren<Animator>();
     }
 
     private IEnumerator FOVRoutine() {
@@ -48,15 +51,29 @@ public class FieldOfView : MonoBehaviour
                 if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
                     canSeePlayer = true;
+                    Run();
                 }else{
                     canSeePlayer = false;
+                    Walk();
                 }
             }else
             {
                 canSeePlayer = false;
+                Walk();
             }
         }else{
             canSeePlayer = false;
+            Walk();
         }
+    }
+
+    private void Walk()
+    {
+        anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
+    }
+
+    private void Run()
+    {
+        anim.SetFloat("Speed", 0.98f, 0.1f, Time.deltaTime);
     }
 }
