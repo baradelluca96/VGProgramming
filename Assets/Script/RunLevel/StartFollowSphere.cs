@@ -19,5 +19,14 @@ public class StartFollowSphere : MonoBehaviour
         Sphere.GetComponent<WaypointController>().enabled = true;
         rotationSphere.GetComponent<SphereRotation>().enabled = true;
         rotationSphere.GetComponent<SphereRotation>().Pause = false;
+        
+        StartCoroutine("PlaySphereMovementSound");
+    }
+
+    IEnumerator PlaySphereMovementSound()
+    {
+        Sphere.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(0.7f);
+        GetComponent<AudioSource>().Play();
     }
 }
