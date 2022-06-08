@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -100f; // Fixed gravity -9.81f;
     public float jumpHeight = 5f;
 
+    public float modelRotationSpeedThirdPerson = 1000f;
     float x;
     float z;
 
@@ -26,10 +27,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator anim;
     
+    private GameObject playerModel;
+
     private void Start()
     {
       controller = GetComponent<CharacterController>();
       anim = GetComponentInChildren<Animator>();
+      playerModel = GameObject.Find("Ellen");
     }
     // Update is called once per frame
     void Update()
@@ -61,6 +65,14 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime; // Current speed with acceleration, framerate independent;
 
         controller.Move(velocity * Time.deltaTime); // Real movement, should be framerate independent too, not connected to previous delta fix;
+
+        if (invertMovement && move != Vector3.zero)
+        {
+          Debug.Log(modelRotationSpeedThirdPerson);
+          Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
+
+          playerModel.transform.rotation = Quaternion.RotateTowards(playerModel.transform.rotation, toRotation, modelRotationSpeedThirdPerson * Time.deltaTime);
+        }
      
         /* if (pressed)
           {

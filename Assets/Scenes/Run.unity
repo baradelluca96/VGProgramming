@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14511105, g: 0.35576737, b: 0.32073808, a: 1}
+  m_IndirectSpecularColor: {r: 0.14511162, g: 0.35576904, b: 0.3207392, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1405,6 +1405,7 @@ MonoBehaviour:
   baseSpeed: 20
   gravity: -100
   jumpHeight: 10
+  modelRotationSpeedThirdPerson: 100
   groundCheck: {fileID: 472343384}
   groundDistance: 0.4
   groundMask:
@@ -9436,6 +9437,7 @@ MonoBehaviour:
   baseSpeed: 50
   gravity: -100
   jumpHeight: 10
+  modelRotationSpeedThirdPerson: 1000
   groundCheck: {fileID: 559582755}
   groundDistance: 0.4
   groundMask:
@@ -9476,7 +9478,6 @@ Transform:
   - {fileID: 559582755}
   - {fileID: 346883204}
   - {fileID: 1274400592}
-  - {fileID: 1871866959}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -20337,6 +20338,7 @@ GameObject:
   - component: {fileID: 1871866959}
   - component: {fileID: 1871866961}
   - component: {fileID: 1871866960}
+  - component: {fileID: 1871866962}
   m_Layer: 0
   m_Name: IsometricCam
   m_TagString: Untagged
@@ -20351,15 +20353,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871866958}
-  m_LocalRotation: {x: 0, y: 0.9636305, z: -0.26723832, w: 0}
-  m_LocalPosition: {x: 0.7700493, y: 8.8, z: 22}
-  m_LocalScale: {x: 0.33333334, y: 0.22983027, z: 0.39368632}
+  m_LocalRotation: {x: 0.4051415, y: 0, z: 0, w: 0.914254}
+  m_LocalPosition: {x: 0, y: 76.6, z: -175.6}
+  m_LocalScale: {x: 2.3333335, y: 2.1154056, z: 3.0690973}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 438399030}
-  m_Father: {fileID: 763408784}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 31, y: 180, z: 0}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 47.8, y: 0, z: 0}
 --- !u!81 &1871866960
 AudioListener:
   m_ObjectHideFlags: 0
@@ -20411,6 +20413,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1871866962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871866958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed64d824c2a00b40aaf775438e4ec05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRef: {fileID: 763408778}
+  initialZ: -30
+  playerTargetTriggerZ: -90
 --- !u!1 &1873956692
 GameObject:
   m_ObjectHideFlags: 0
