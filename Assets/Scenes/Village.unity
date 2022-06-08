@@ -12958,6 +12958,8 @@ GameObject:
   - component: {fileID: 466400937}
   - component: {fileID: 466400938}
   - component: {fileID: 466400939}
+  - component: {fileID: 466400940}
+  - component: {fileID: 466400941}
   m_Layer: 0
   m_Name: Grenadier
   m_TagString: Untagged
@@ -13036,7 +13038,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -13173,6 +13175,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &466400940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466400931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94405208e4d5fd1469b5b2b50129411c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &466400941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466400931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8214169, y: 3.4221587, z: 1}
+  m_Center: {x: -0.18069872, y: 1.9151561, z: 0}
 --- !u!1 &466401013
 GameObject:
   m_ObjectHideFlags: 0
@@ -49090,6 +49117,8 @@ GameObject:
   - component: {fileID: 1515669003}
   - component: {fileID: 1515669002}
   - component: {fileID: 1515669008}
+  - component: {fileID: 1515669010}
+  - component: {fileID: 1515669009}
   m_Layer: 0
   m_Name: Grenadier4
   m_TagString: Untagged
@@ -49326,6 +49355,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1515669009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515669000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94405208e4d5fd1469b5b2b50129411c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1515669010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515669000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.538267, y: 3.7423713, z: 1.3434093}
+  m_Center: {x: 0.06769435, y: 2.301991, z: 0.17170462}
 --- !u!1 &1518251590
 GameObject:
   m_ObjectHideFlags: 0
@@ -55651,6 +55705,8 @@ GameObject:
   - component: {fileID: 1699652656}
   - component: {fileID: 1699652657}
   - component: {fileID: 1699652658}
+  - component: {fileID: 1699652660}
+  - component: {fileID: 1699652659}
   m_Layer: 0
   m_Name: Grenadier3
   m_TagString: Untagged
@@ -55887,6 +55943,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1699652659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699652649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0578697, y: 2.6499233, z: 1}
+  m_Center: {x: 0.027923267, y: 1.6813205, z: 0}
+--- !u!114 &1699652660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699652649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94405208e4d5fd1469b5b2b50129411c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1714276690
 GameObject:
   m_ObjectHideFlags: 0
@@ -57504,7 +57585,7 @@ GameObject:
   - component: {fileID: 1943421115}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62365,6 +62446,8 @@ GameObject:
   - component: {fileID: 2007741910}
   - component: {fileID: 2007741911}
   - component: {fileID: 2007741912}
+  - component: {fileID: 2007741914}
+  - component: {fileID: 2007741913}
   m_Layer: 0
   m_Name: Grenadier2
   m_TagString: Untagged
@@ -63919,6 +64002,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2007741913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000340499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94405208e4d5fd1469b5b2b50129411c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2007741914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000340499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3165617, y: 2.6020746, z: 1}
+  m_Center: {x: -0.03645436, y: 1.8071132, z: 0}
 --- !u!137 &2011843349
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
