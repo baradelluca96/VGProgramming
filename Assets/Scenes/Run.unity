@@ -1405,6 +1405,7 @@ MonoBehaviour:
   baseSpeed: 20
   gravity: -100
   jumpHeight: 10
+  modelRotationSpeedThirdPerson: 100
   groundCheck: {fileID: 472343384}
   groundDistance: 0.4
   groundMask:
@@ -9245,6 +9246,7 @@ MonoBehaviour:
   baseSpeed: 50
   gravity: -100
   jumpHeight: 10
+  modelRotationSpeedThirdPerson: 1000
   groundCheck: {fileID: 559582755}
   groundDistance: 0.4
   groundMask:
@@ -20234,7 +20236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRef: {fileID: 763408778}
   initialZ: -30
-  targetPlayerTriggerZ: -90
+  playerTargetTriggerZ: -90
 --- !u!1 &1873956692
 GameObject:
   m_ObjectHideFlags: 0

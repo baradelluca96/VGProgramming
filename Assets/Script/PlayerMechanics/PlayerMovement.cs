@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -100f; // Fixed gravity -9.81f;
     public float jumpHeight = 5f;
 
+    public float modelRotationSpeedThirdPerson = 1000f;
     float x;
     float z;
 
@@ -67,7 +68,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (invertMovement && move != Vector3.zero)
         {
-          playerModel.transform.forward = move;
+          Debug.Log(modelRotationSpeedThirdPerson);
+          Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
+
+          playerModel.transform.rotation = Quaternion.RotateTowards(playerModel.transform.rotation, toRotation, modelRotationSpeedThirdPerson * Time.deltaTime);
         }
      
         /* if (pressed)
