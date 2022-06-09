@@ -13,10 +13,6 @@ public class WaypointController : MonoBehaviour
 
     public float movementSpeed = 0.015f;
     private float rotationSpeed = 1.0f; 
-    
-    private bool start = false;
-
-    
 
     // Start is called before the first frame update
     void Start()

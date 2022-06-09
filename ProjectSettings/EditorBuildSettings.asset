@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Run.unity
     guid: e71a86d8fc5a29b4d9ddd60b4f6420f8
   - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 9e4703dcae7d31c46b65b8a81b1fa37c
+  - enabled: 1
     path: Assets/Scenes/Village.unity
     guid: eeb43e1d0c843ac469edb4f49d46f87b
+  - enabled: 1
+    path: Assets/Scenes/TempleMidGame.unity
+    guid: f5d90c40f19989e4a8fb273be0c8c806
   m_configObjects: {}

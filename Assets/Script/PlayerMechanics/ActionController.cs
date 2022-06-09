@@ -8,7 +8,6 @@ public class ActionController : MonoBehaviour
     GameObject target;
     float channelStatus = 0f;
     bool enableAction = false;
-    bool buttonDropped = false;
     [SerializeField] GameObject fillInteraction;
     Image fillImage;
     // Start is called before the first frame update

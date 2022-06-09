@@ -106,21 +106,21 @@ public class TriggerUI : MonoBehaviour
                 return "Forse il viaggio ti ha stordito, ricordati che per muoverti devi premere i tasti W,A,S o D! Per guardarti attorno usa il mouse!";
 
             case "orbInstructions1":
-                return "Questa sembra un fonte di energia sufficiente per un viaggio solo!";
+                return "Questa sembra un fonte di energia sufficiente per un viaggio solo! Quel simbolo è uno dei nostri talismani! Dobbiamo trovarlo.";
 
             case "orbInstructions2":
-                return "Avvicinati e prova a premere E per fare in modo riesca a sfruttare l'energia e trovare il primo pezzo!";
+                return "Avvicinati e prova a premere E per fare in modo che io possa sfruttare l'energia per viaggiare!";
 
             case "torchInstructions":
                 return "Sembra piuttosto buio! Ricordati che ho una luce integrata, se vuoi attivarla premi il tasto Q!";
             case "dialogue1":
                 return "Ehi, pare tu abbia perso la memoria, un'anomalia nel viaggio temporale ci ha fatto uscire di rotta e ora la nave è fuori uso.";
             case "dialogue2":
-                return "Sembra che abbiamo perso alcuni pezzi, li ho identificati e sono dispersi nel tempo, precisamente in 3 luoghi e tempi diversi.";
+                return "Dobbiamo ritrovare i talismani per il viaggio, li ho identificati e sono dispersi nel tempo, precisamente in 3 luoghi e tempi diversi.";
             case "dialogue3":
                 return "Rilevo alcune fonti di energia nelle vicinanze...";
             case "dialogue4":
-                return "... forse possiamo sfruttarle per viaggiare nel tempo e recuperare i pezzi per le riparazioni.";
+                return "... forse possiamo sfruttarle per viaggiare nel tempo e recuperare i talismani per riprendere il viaggio.";
 
             case "labDialogue1":
                 return "Siamo finiti in una zona misteriosa. Attenzione a non cadere!";
@@ -131,7 +131,7 @@ public class TriggerUI : MonoBehaviour
                 return "Rilevo una bassissima concentrazione di ossigeno all'interno. Preparati a trattenere il respiro!";
 
             case "villageDialogue1":
-                return "Sembra siamo finiti in un villaggio disabitato... Dobbiamo trovare il pezzo! Oh no!";
+                return "Sembra siamo finiti in un villaggio disabitato... Dobbiamo trovare il talismano del sole! Aspetta... Oh no!";
             case "villageDialogue2":
                 return "Sembra che non siamo soli! Ti stanno cercando, forse per qualcosa che hai dimenticato di aver fatto!";
             case "villageDialogue3":

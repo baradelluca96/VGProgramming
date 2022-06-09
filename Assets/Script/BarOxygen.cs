@@ -12,7 +12,6 @@ public class BarOxygen : MonoBehaviour
     public float time;
     private float currentTime;
     public GameObject timeUpMessage;
-    public GameObject collider;
 
     private int scaleID;
 
