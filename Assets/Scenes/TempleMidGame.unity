@@ -35320,7 +35320,6 @@ MonoBehaviour:
   runLantern: {fileID: 1847547807}
   runOrb: {fileID: 1847547809}
   pyramidSymbol1: {fileID: 359515274}
-  pyramidSymbol2: {fileID: 0}
   pyramidLantern: {fileID: 654357420}
   pyramidOrb: {fileID: 1045859724}
 --- !u!4 &1246495614
@@ -40084,14 +40083,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de73ef9ae002f504ba8f0d1c6567e336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showInitialDialogue: 1
-  showMovementInstructions: 1
-  showOrbInstructions: 1
+  showInitialDialogue: 0
+  showMovementInstructions: 0
+  showOrbInstructions: 0
   showTorchLightInstructions: 0
   showLabDialogue: 0
   showOxygenInstructions: 0
   showVillageDialogue: 0
   showRunDialogue: 0
+  updatePlayerStatus: 1
 --- !u!114 &1443469134
 MonoBehaviour:
   m_ObjectHideFlags: 0
