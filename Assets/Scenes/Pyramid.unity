@@ -7592,9 +7592,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 353271068}
-  baseSpeed: 12
-  gravity: -100
-  jumpHeight: 5
+  baseSpeed: 6
+  gravity: -50
+  jumpHeight: 2
   modelRotationSpeedThirdPerson: 1000
   groundCheck: {fileID: 996403615}
   groundDistance: 0.4
