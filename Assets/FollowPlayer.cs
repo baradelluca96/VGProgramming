@@ -7,6 +7,11 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] GameObject player;
     public bool uiTriggered = false;
 
+    [SerializeField] float forward = -2f;
+    [SerializeField] float up = 3f;
+    [SerializeField] float right = 2f;
+    // Start is called before the first frame update
+
     private Animator anim;
     
     void Start()

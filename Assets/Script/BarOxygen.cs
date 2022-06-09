@@ -15,8 +15,6 @@ public class BarOxygen : MonoBehaviour
 
     private int scaleID;
 
-    private Scene scene;
-
     public void Start() {
         bg.SetActive(false);
         
@@ -29,6 +27,7 @@ public class BarOxygen : MonoBehaviour
             bar.SetActive(true);
             bg.SetActive(true);     
             slideBar = bar.GetComponent<Image>();
+            RenderSettings.ambientIntensity = 0.1f;
 
             StartCoroutine("StartOxygenBar");
         }
@@ -39,10 +38,8 @@ public class BarOxygen : MonoBehaviour
         while( currentTime <= time ) {
             currentTime += 0.1f;
             slideBar.fillAmount -=  0.1f / time;
-            if(slideBar.fillAmount < 0.09f){
-                Debug.Log("Eccoci: "+ slideBar.fillAmount);
-                Debug.Log("Name: "+ scene.name);
-                Application.LoadLevel(scene.name);
+            if(slideBar.fillAmount < 0.02f){
+                Application.LoadLevel("Pyramid");
             }
             yield return new WaitForSeconds(0.1f);
         }
@@ -55,6 +52,7 @@ public class BarOxygen : MonoBehaviour
             bg.SetActive(false);
             currentTime = 0f;
             StopCoroutine("StartOxygenBar");
+            RenderSettings.ambientIntensity = 1f;
         }
     }
 

@@ -23,6 +23,7 @@ public class ToggleLight : MonoBehaviour
         if(Input.GetButtonDown("ToggleUI"))
         {
             spotlight.enabled = !spotlight.enabled;
+            companion.GetComponent<FollowPlayer>().uiTriggered = !companion.GetComponent<FollowPlayer>().uiTriggered;
         }
 
         if(spotlight.enabled)
