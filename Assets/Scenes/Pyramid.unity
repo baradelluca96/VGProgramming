@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.57033455, g: 0.56636673, b: 0.47506464, a: 1}
+  m_IndirectSpecularColor: {r: 0.57033277, g: 0.5663651, b: 0.47506404, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7560,6 +7560,7 @@ MonoBehaviour:
   showOxygenInstructions: 1
   showVillageDialogue: 0
   showRunDialogue: 0
+  updatePlayerStatus: 0
 --- !u!114 &353271066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7613,7 +7614,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 1
+  m_Radius: 1.5
   m_SlopeLimit: 45
   m_StepOffset: 0.5
   m_SkinWidth: 0.08
@@ -7628,7 +7629,7 @@ Transform:
   m_GameObject: {fileID: 353271062}
   m_LocalRotation: {x: 0, y: -0.74422985, z: 0, w: 0.6679236}
   m_LocalPosition: {x: 30, y: 11.61, z: -0}
-  m_LocalScale: {x: 0.59, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1920161921}
