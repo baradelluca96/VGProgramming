@@ -11,6 +11,7 @@ public class PlayerInstructions : MonoBehaviour
     [SerializeField] bool showLabDialogue;
     [SerializeField] bool showOxygenInstructions;
     [SerializeField] bool showVillageDialogue;
+    [SerializeField] bool showRunDialogue;
     bool hasMoved = false;
     bool displayedMovementInstructions = false;
     InstructionPrinter printer;
@@ -27,6 +28,9 @@ public class PlayerInstructions : MonoBehaviour
         }else if(showVillageDialogue)
         {
             StartCoroutine("ShowVillageDialogue");
+        }else if(showRunDialogue)
+        {
+            StartCoroutine("ShowRunDialogue");
         }
     }
 
@@ -142,5 +146,16 @@ public class PlayerInstructions : MonoBehaviour
     IEnumerator DelayedRemoveInstructions(){
         yield return new WaitForSeconds(8f);
         StartCoroutine("RemoveInstructions");
+    }
+
+    IEnumerator ShowRunDialogue(){
+        yield return new WaitForSeconds(1f);
+        printer.PrintRunDialogue(1);
+        yield return new WaitForSeconds(5f);
+        printer.PrintRunDialogue(2);
+        yield return new WaitForSeconds(6f);
+        StartCoroutine("RemoveInstructions");
+
+
     }
 }

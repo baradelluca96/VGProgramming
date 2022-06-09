@@ -136,6 +136,11 @@ public class TriggerUI : MonoBehaviour
                 return "Sembra che non siamo soli! Ti stanno cercando, forse per qualcosa che hai dimenticato di aver fatto!";
             case "villageDialogue3":
                 return "Cerca di non farti vedere, e se ti vedono nasconditi!";
+            
+            case "runDialogue1":
+                return "Rilevo il pezzo non lontano da qui...";
+            case "runDialogue2":
+                return "Per correre tieni premuto SHIFT. Ho il sospetto ti servirà!";
 
             default:
                 return "Unhandled case: " + policy;

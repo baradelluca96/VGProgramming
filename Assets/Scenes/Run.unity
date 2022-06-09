@@ -5701,7 +5701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508461114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 48.5, z: 251.2}
+  m_LocalPosition: {x: 0, y: 48.5, z: 277.1}
   m_LocalScale: {x: 200, y: 100, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8159,8 +8159,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPersonCam: {fileID: 1059959632}
   isometricCam: {fileID: 1871866958}
-  playerMovementChange: {fileID: 763408778}
+  player: {fileID: 763408778}
   triggerOut: {fileID: 672327155}
+  reversePlayer: 1
 --- !u!65 &672327157
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8232,7 +8233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672327155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.900001, z: 26.4}
+  m_LocalPosition: {x: 0, y: 13.900001, z: 45.1}
   m_LocalScale: {x: 118.76, y: 41.6614, z: 153.48244}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8771,7 +8772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPersonCam: {fileID: 1059959632}
   isometricCam: {fileID: 1871866958}
-  playerMovementChange: {fileID: 763408778}
+  player: {fileID: 763408778}
   triggerOut: {fileID: 1675592136}
 --- !u!1 &739745007
 GameObject:
@@ -9122,6 +9123,7 @@ MonoBehaviour:
   showLabDialogue: 0
   showOxygenInstructions: 0
   showVillageDialogue: 0
+  showRunDialogue: 1
 --- !u!114 &763408781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12212,7 +12214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080684065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.900001, z: 0.7}
+  m_LocalPosition: {x: 0, y: 13.900001, z: -7}
   m_LocalScale: {x: 118.76, y: 41.6614, z: 116.32745}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12233,7 +12235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPersonCam: {fileID: 1059959632}
   isometricCam: {fileID: 1871866958}
-  playerMovementChange: {fileID: 763408778}
+  player: {fileID: 763408778}
   triggerOut: {fileID: 672327155}
 --- !u!65 &1080684068
 BoxCollider:
@@ -18489,8 +18491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPersonCam: {fileID: 1059959632}
   isometricCam: {fileID: 1871866958}
-  playerMovementChange: {fileID: 763408778}
+  player: {fileID: 763408778}
   triggerOut: {fileID: 1675592136}
+  reversePlayer: 0
 --- !u!1 &1685354471
 GameObject:
   m_ObjectHideFlags: 0

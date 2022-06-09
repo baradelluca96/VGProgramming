@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
           x = Input.GetAxis("Horizontal");
           z = Input.GetAxis("Vertical");
         }else{
-          x = Input.GetAxis("Horizontal") * -1;
+          x = Input.GetAxis("Horizontal");
           z = Input.GetAxis("Vertical") * -1;
         }
 
