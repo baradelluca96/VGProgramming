@@ -39,7 +39,10 @@ public class TriggerUI : MonoBehaviour
         }*/
 
         if(isOpen || lockOpen) {
+            companion.GetComponent<FollowPlayer>().uiTriggered = true;
             StepMoveCompanionOnUI();
+        }else{
+            companion.GetComponent<FollowPlayer>().uiTriggered = false;
         }
     }
 
@@ -54,7 +57,7 @@ public class TriggerUI : MonoBehaviour
 
     IEnumerator DisplayInstruction()
     {
-        yield return new WaitForSeconds(1.5f); // After 1.5 sec
+        yield return new WaitForSeconds(.5f); // After 1.5 sec
         tMPtext.text = "";
         AudioSource textSound = GetComponent<AudioSource>();
         foreach (char c in instructions)
@@ -90,7 +93,7 @@ public class TriggerUI : MonoBehaviour
     }
 
     public void StepMoveCompanionOnUI(){
-        GameObject camera = GameObject.Find("Main Camera");
+        GameObject camera = GameObject.Find("FirstPersonCam");
         Vector3 targetPosition = (camera.transform.position + camera.transform.forward * UIcompanionDistance + camera.transform.up * UIcompanionDistanceTop + camera.transform.right * UIcompanionDistanceSide);
         float distance = Mathf.Clamp(Vector3.Distance(companion.transform.position, targetPosition), 0.005f, 100f);
         companion.transform.position = Vector3.MoveTowards(companion.transform.position, targetPosition, companionUISpeed * Time.deltaTime * distance);

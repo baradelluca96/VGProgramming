@@ -10,16 +10,16 @@ public class CamTriggerOUT : MonoBehaviour
     public GameObject triggerOut;
     
     void OnTriggerEnter(Collider other) {
-        isometricCam.SetActive(false);
-        firstPersonCam.SetActive(true);
+        isometricCam.GetComponent<Camera>().enabled = false;
+        firstPersonCam.GetComponent<Camera>().enabled = true;
         triggerOut.SetActive(true);
         playerMovementChange.GetComponent<PlayerMovement>().invertMovement = false;
     }
 
     void OnTriggerExit(Collider other) {
+        isometricCam.GetComponent<Camera>().enabled = true;
+        firstPersonCam.GetComponent<Camera>().enabled = false;
         triggerOut.SetActive(false);
-        firstPersonCam.SetActive(false);
-        isometricCam.SetActive(true);
         playerMovementChange.GetComponent<PlayerMovement>().invertMovement = true;
     }
 

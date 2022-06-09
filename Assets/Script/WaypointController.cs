@@ -28,23 +28,22 @@ public class WaypointController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float movementStep = movementSpeed * Time.deltaTime;
-            float rotationStep = rotationSpeed * Time.deltaTime;
+        float rotationStep = rotationSpeed * Time.deltaTime;
 
-            Vector3 directionToTarget = targetWaypoint.position - transform.position;
-            Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
+        Vector3 directionToTarget = targetWaypoint.position - transform.position;
+        Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep); 
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep); 
 
-            Debug.DrawRay(transform.position, transform.forward * 50f, Color.green, 0f);
-            Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
+        Debug.DrawRay(transform.position, transform.forward * 50f, Color.green, 0f);
+        Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
 
 
-            float distance = Vector3.Distance(transform.position, targetWaypoint.position);
+        float distance = Vector3.Distance(transform.position, targetWaypoint.position);
 
-            CheckDistanceToWaypoint(distance);
+        CheckDistanceToWaypoint(distance);
 
-            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementSpeed * Time.deltaTime);
         
     }
 
@@ -59,11 +58,15 @@ public class WaypointController : MonoBehaviour
 
     void UpdateTargetaypoint()
     {
-        if(targetWaypointIndex > lastWaypointIndex && loop) 
+        if(targetWaypointIndex > lastWaypointIndex) 
         {
-            targetWaypointIndex = 0;
+            if(loop)
+            {
+                targetWaypointIndex = 0;
+            }
+        }else{
+            targetWaypoint = waypoints[targetWaypointIndex];   
         }
-        targetWaypoint = waypoints[targetWaypointIndex];
     }
 
 }

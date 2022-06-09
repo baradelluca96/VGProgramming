@@ -68,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (invertMovement && move != Vector3.zero)
         {
-          Debug.Log(modelRotationSpeedThirdPerson);
           Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
 
           playerModel.transform.rotation = Quaternion.RotateTowards(playerModel.transform.rotation, toRotation, modelRotationSpeedThirdPerson * Time.deltaTime);
