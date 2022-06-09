@@ -25044,9 +25044,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 927199194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eb188b0bb87796488e7bf64c2c8ba1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 186a1dc7df83d114bb4406af2fc77f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1443469127}
+  uiTriggered: 0
 --- !u!1001 &929154289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27569,6 +27571,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrbInstructionTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6294078231276587424, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 42.796543
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294078231276587424, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294078231276587424, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8585913514413757283, guid: 605c5179c270f51458f90168a90b72a3,
         type: 3}
       propertyPath: m_Volume
@@ -27610,7 +27627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb96dfd28c5c34f8d8c3c69d253f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDScene: 4
+  SceneName: Pyramid
   orbLight: {fileID: 1490384453}
   channelStepValue: 0.4
 --- !u!1001 &1046783441
@@ -36785,6 +36802,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 15fb383ffc181fa4bade47e99b0b51f6, type: 2}
+    - target: {fileID: 2475696478840785213, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294078231276587424, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 29.496918
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294078231276587424, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294078231276587424, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294078231276587424, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
 --- !u!4 &1331004762 stripped
@@ -36811,7 +36853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb96dfd28c5c34f8d8c3c69d253f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDScene: 3
+  SceneName: Village
   orbLight: {fileID: 779419953}
   channelStepValue: 0.4
 --- !u!1001 &1331299688
@@ -46983,7 +47025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb96dfd28c5c34f8d8c3c69d253f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDScene: 2
+  SceneName: Run
   orbLight: {fileID: 1356436716}
   channelStepValue: 0.4
 --- !u!1001 &1849342828

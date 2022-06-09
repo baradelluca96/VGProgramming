@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LanternAction : PlayerAction
 {
-    public int IDScene;
+    public string SceneName;
     public Light orbLight;
     [SerializeField] float channelStepValue = 0.4f;
 
@@ -29,6 +29,6 @@ public class LanternAction : PlayerAction
     }
 
     private void SwitchScene(){
-        SceneManager.LoadScene(IDScene);
+        SceneManager.LoadScene(SceneName);
     }
 }

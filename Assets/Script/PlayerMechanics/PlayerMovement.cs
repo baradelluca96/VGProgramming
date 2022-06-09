@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
           x = Input.GetAxis("Horizontal");
           z = Input.GetAxis("Vertical");
         }else{
-          x = Input.GetAxis("Horizontal") * -1;
+          x = Input.GetAxis("Horizontal");
           z = Input.GetAxis("Vertical") * -1;
         }
 
@@ -68,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (invertMovement && move != Vector3.zero)
         {
-          Debug.Log(modelRotationSpeedThirdPerson);
           Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
 
           playerModel.transform.rotation = Quaternion.RotateTowards(playerModel.transform.rotation, toRotation, modelRotationSpeedThirdPerson * Time.deltaTime);

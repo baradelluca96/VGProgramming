@@ -6,7 +6,7 @@ public class CamTriggerIN : MonoBehaviour
 {
     public GameObject firstPersonCam;
     public GameObject isometricCam;
-    public GameObject playerMovementChange;
+    public GameObject player;
     public GameObject triggerOut;
     
     void OnTriggerEnter(Collider other) {

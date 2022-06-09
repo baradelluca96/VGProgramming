@@ -23,9 +23,9 @@ public class RaycastAction : MonoBehaviour
     {
         RaycastHit hit;
         Ray landingRay = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(transform.position, transform.forward * 10f);
+        Debug.DrawRay(transform.position, transform.forward * 15f);
         // TODO ASSOLUTAMENTE DA FARE REFACTOR
-        if(Physics.Raycast(landingRay, out hit, 7f))
+        if(Physics.Raycast(landingRay, out hit, 15f))
         {
             if(hit.collider.tag == "ObjectWithAction")
             {

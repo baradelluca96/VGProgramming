@@ -61,4 +61,9 @@ public class InstructionPrinter : MonoBehaviour
     {
         uiHandler.showUI("villageDialogue" + index);
     }
+
+    public void PrintRunDialogue(int index)
+    {
+        uiHandler.showUI("runDialogue" + index);
+    }
 }
