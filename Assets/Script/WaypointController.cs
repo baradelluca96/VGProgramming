@@ -60,6 +60,8 @@ public class WaypointController : MonoBehaviour
             {
                 targetWaypointIndex = 0;
             }
+            GetComponent<AudioSource>().Stop();
+            Destroy(this);
         }else{
             targetWaypoint = waypoints[targetWaypointIndex];   
         }

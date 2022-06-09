@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class TriggerWall : MonoBehaviour
 {
-    public GameObject wall;
+    [SerializeField] GameObject wall;
+    [SerializeField] GameObject wallSound;
+    GameObject sphere;
+
 
     void OnTriggerEnter(Collider other) {
         wall.SetActive(true);
+
+        StartCoroutine("DestroySphere");
+    }
+
+    IEnumerator DestroySphere() {
+        yield return new WaitForSeconds(1f);
+        wallSound.GetComponent<AudioSource>().Play();
+        Destroy(sphere);
     }
 }

@@ -12,6 +12,7 @@ public class PlayerInstructions : MonoBehaviour
     [SerializeField] bool showOxygenInstructions;
     [SerializeField] bool showVillageDialogue;
     [SerializeField] bool showRunDialogue;
+    [SerializeField] bool updatePlayerStatus;
     bool hasMoved = false;
     bool displayedMovementInstructions = false;
     InstructionPrinter printer;
@@ -31,6 +32,9 @@ public class PlayerInstructions : MonoBehaviour
         }else if(showRunDialogue)
         {
             StartCoroutine("ShowRunDialogue");
+        }else if(updatePlayerStatus)
+        {
+            StartCoroutine("UpdateMidGameStatus");
         }
     }
 
@@ -155,7 +159,12 @@ public class PlayerInstructions : MonoBehaviour
         printer.PrintRunDialogue(2);
         yield return new WaitForSeconds(6f);
         StartCoroutine("RemoveInstructions");
+    }
 
-
+    IEnumerator UpdateMidGameStatus(){
+        yield return new WaitForSeconds(1f);
+        printer.PrintUpdateDialogue();
+        yield return new WaitForSeconds(6f);
+        StartCoroutine("RemoveInstructions");
     }
 }

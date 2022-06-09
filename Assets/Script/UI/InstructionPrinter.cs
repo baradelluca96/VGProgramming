@@ -66,4 +66,9 @@ public class InstructionPrinter : MonoBehaviour
     {
         uiHandler.showUI("runDialogue" + index);
     }
+
+    public void PrintUpdateDialogue()
+    {
+        uiHandler.showUI("updateDialogue");
+    }
 }

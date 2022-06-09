@@ -142,6 +142,47 @@ public class TriggerUI : MonoBehaviour
             case "runDialogue2":
                 return "Per correre tieni premuto SHIFT. Ho il sospetto ti servirà!";
 
+            case "updateDialogue":
+                bool runComplete = PlayerPrefs.GetInt("Run") > 0;
+                bool villageComplete = PlayerPrefs.GetInt("Village") > 0;
+                bool pyramidComplete = PlayerPrefs.GetInt("Pyramid") > 0;
+
+                int sum = PlayerPrefs.GetInt("Run") + PlayerPrefs.GetInt("Village") + PlayerPrefs.GetInt("Pyramid");
+                string value = "Abbiamo preso ";
+                if(sum < 2) // Only one level complete
+                {
+                    if(runComplete)
+                    {
+                        value += "la foglia! Mancano il sole e la croce.";
+                    }
+
+                    if(villageComplete)
+                    {
+                        value += "il sole! Mancano la foglia e la croce.";
+                    }
+
+                    if(pyramidComplete)
+                    {
+                        value += "la croce! Mancano la foglia e il sole.";
+                    }
+                }else{ // Two levels complete
+                    if(!runComplete)
+                    {
+                        value += "il sole e la croce. Manca solo la foglia!";
+                    }
+
+                    if(!villageComplete)
+                    {
+                        value += "la foglia e la croce. Manca solo il sole!";
+                    }
+
+                    if(!pyramidComplete)
+                    {
+                        value += "la foglia e il sole. Manca solo la croce!";
+                    }
+                }
+
+                return value;
             default:
                 return "Unhandled case: " + policy;
         }
