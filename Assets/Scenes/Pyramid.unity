@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.57033277, g: 0.5663651, b: 0.47506404, a: 1}
+  m_IndirectSpecularColor: {r: 0.57033455, g: 0.56636673, b: 0.47506464, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1208,9 +1208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companion: {fileID: 1570058739}
   companionUISpeed: 5
-  UIcompanionDistance: 5
-  UIcompanionDistanceSide: 2
-  UIcompanionDistanceTop: 1.5
+  UIcompanionDistance: -3.5
+  UIcompanionDistanceSide: -1.5
+  UIcompanionDistanceTop: -1.5
 --- !u!1 &62678122
 GameObject:
   m_ObjectHideFlags: 0
@@ -7525,7 +7525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 505933297}
   bar: {fileID: 1382862837}
-  time: 10
+  time: 60
   timeUpMessage: {fileID: 785787580}
 --- !u!114 &353271064
 MonoBehaviour:
@@ -13430,7 +13430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 01b161d6564a93748a1a03ed24cdf1c3, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 01b161d6564a93748a1a03ed24cdf1c3, type: 3}
       propertyPath: m_LocalScale.x
@@ -27541,51 +27541,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300030, guid: 48dc4c6cddf48a943bf7251f1ba06c05, type: 3}
---- !u!1 &1285363702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1285363704}
-  - component: {fileID: 1285363703}
-  m_Layer: 0
-  m_Name: TorchInstructionsTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1285363703
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285363702}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1285363704
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285363702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.9, y: 12.13, z: 0.62}
-  m_LocalScale: {x: 2.720407, y: 3.1236, z: 7.6126323}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1285852189 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013239581964, guid: 79c5ef9a988048c488045c56407768ce,
@@ -33994,6 +33949,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 353271062}
   uiTriggered: 0
+  forward: -2
+  up: 3
+  right: 2
 --- !u!4 &1570058741
 Transform:
   m_ObjectHideFlags: 0
@@ -34009,7 +33967,7 @@ Transform:
   - {fileID: 766458694}
   - {fileID: 609245474}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1571549967
 PrefabInstance:
@@ -44097,7 +44055,7 @@ GameObject:
   - component: {fileID: 2074948758}
   - component: {fileID: 2074948757}
   m_Layer: 0
-  m_Name: OxygenInstructionsTrigger
+  m_Name: InstructionsTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44124,7 +44082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074948756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.45, y: 12.13, z: 0}
+  m_LocalPosition: {x: -19.34, y: 12.13, z: 0}
   m_LocalScale: {x: 5.9325, y: 3.1236, z: 2.5662}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -111,8 +111,6 @@ public class TriggerUI : MonoBehaviour
             case "orbInstructions2":
                 return "Avvicinati e prova a premere E per fare in modo che io possa sfruttare l'energia per viaggiare!";
 
-            case "torchInstructions":
-                return "Sembra piuttosto buio! Ricordati che ho una luce integrata, se vuoi attivarla premi il tasto Q!";
             case "dialogue1":
                 return "Ehi, pare tu abbia perso la memoria, un'anomalia nel viaggio temporale ci ha fatto uscire di rotta e ora la nave è fuori uso.";
             case "dialogue2":
@@ -125,10 +123,10 @@ public class TriggerUI : MonoBehaviour
             case "labDialogue1":
                 return "Siamo finiti in una zona misteriosa. Attenzione a non cadere!";
             case "labDialogue2":
-                return " Sembra ci sia un ingresso laggiù. Il segnale proviene dall'interno di quella struttura.";
+                return "Sembra ci sia un ingresso laggiù. Il segnale proviene dall'interno di quella struttura.";
 
-            case "oxygenInstructions":
-                return "Rilevo una bassissima concentrazione di ossigeno all'interno. Preparati a trattenere il respiro!";
+            case "labInstructions":
+                return "Rilevo una bassissima concentrazione di ossigeno all'interno. Preparati a trattenere il respiro! Se ti dovesse serivre la mia torcia, premi Q!";
 
             case "villageDialogue1":
                 return "Sembra siamo finiti in un villaggio disabitato... Dobbiamo trovare il talismano del sole! Aspetta... Oh no!";

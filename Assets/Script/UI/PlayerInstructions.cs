@@ -95,21 +95,13 @@ public class PlayerInstructions : MonoBehaviour
             StartCoroutine("ShowOrbInstructions");
         }
 
-        if(other.gameObject.name == "TorchInstructionsTrigger" && showTorchLightInstructions)
+        if(other.gameObject.name == "InstructionsTrigger" && showTorchLightInstructions)
         {
             StopCoroutine("DelayedRemoveInstructions");
             showTorchLightInstructions = false;
-            printer.ShowTorchInstructions();
-            StartCoroutine("DelayedRemoveInstructions");
-        }
-
-        if(other.gameObject.name == "OxygenInstructionsTrigger" && showOxygenInstructions)
-        {
-            StopCoroutine("DelayedRemoveInstructions");
             showOxygenInstructions = false;
-            printer.ShowOxygenInstructions();
+            printer.ShowLabInstructions();
             StartCoroutine("DelayedRemoveInstructions");
-
         }
     }
 
@@ -125,12 +117,11 @@ public class PlayerInstructions : MonoBehaviour
     IEnumerator ShowInitialLabDialogue() {
         yield return new WaitForSeconds(1f);
         printer.PrintInitialLabDialogue(1);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(3.5f);
 
         printer.PrintInitialLabDialogue(2);
-        yield return new WaitForSeconds(8f);
 
-        StartCoroutine("RemoveInstructions");
+        StartCoroutine("DelayedRemoveInstructions");
     }
 
     IEnumerator ShowVillageDialogue() {

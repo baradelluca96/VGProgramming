@@ -37,14 +37,9 @@ public class InstructionPrinter : MonoBehaviour
         uiHandler.unlockUI();
     }
 
-    public void ShowTorchInstructions()
+    public void ShowLabInstructions()
     {
-        uiHandler.showUI("torchInstructions");
-    }
-
-    public void ShowOxygenInstructions()
-    {
-        uiHandler.showUI("oxygenInstructions");
+        uiHandler.showUI("labInstructions");
     }
 
     public void PrintInitialDialogue(int index)
