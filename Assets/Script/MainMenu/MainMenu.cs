@@ -8,7 +8,21 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void PlayGame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        bool runComplete = PlayerPrefs.GetInt("Run") > 0;
+        bool villageComplete = PlayerPrefs.GetInt("Village") > 0;
+        bool pyramidComplete = PlayerPrefs.GetInt("Pyramid") > 0;
+
+        string scene = "Temple";
+        
+        if(runComplete && villageComplete && pyramidComplete)
+        {
+            scene = "Ending";
+        }else if (runComplete || villageComplete || pyramidComplete)
+        {
+            scene = "TempleMidGame";
+        }
+
+        SceneManager.LoadScene(scene);
     }
 
     // Update is called once per frame
@@ -16,5 +30,10 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit!");
         Application.Quit();
+    }
+
+    public void ResetGame()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
