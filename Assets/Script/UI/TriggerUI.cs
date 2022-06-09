@@ -18,6 +18,7 @@ public class TriggerUI : MonoBehaviour
     public float UIcompanionDistanceTop = 1.5f;
     string instructions;
     TMP_Text tMPtext;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +52,6 @@ public class TriggerUI : MonoBehaviour
         lockOpen = true;
         canvas.SetActive(true);
         instructions = GetInstructionsText(policy);
-
         StartCoroutine("DisplayInstruction");
     }
 
