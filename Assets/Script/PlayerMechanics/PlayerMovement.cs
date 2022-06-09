@@ -72,7 +72,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(move != Vector3.zero && pressed)
         {
-          Run(currentSpeed);
+          currentSpeed = currentSpeed * 2;
+          Run();
         }
         else if(move == Vector3.zero)
         {
@@ -120,9 +121,8 @@ public class PlayerMovement : MonoBehaviour
       anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
     }
 
-    private void Run(float currentSpeed)
+    private void Run()
     {
-      currentSpeed = currentSpeed * 4;
       anim.SetFloat("Speed", 0.98f, 0.1f, Time.deltaTime);
     }
 
