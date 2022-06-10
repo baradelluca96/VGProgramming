@@ -60,6 +60,32 @@ public class PlayerMovement : MonoBehaviour
         bool pressed = Input.GetKey("left shift");
         float currentSpeed = baseSpeed;
         Vector3 move = transform.right * x + transform.forward * z;
+
+        /*if (pressed)
+          {
+            currentSpeed = currentSpeed * 2;
+          }
+        */
+        if(move != Vector3.zero && !pressed)
+        {
+          Walk();
+        }
+        else if(move != Vector3.zero && pressed)
+        {
+          currentSpeed = currentSpeed * 2;
+          Run();
+        }
+        else if(move == Vector3.zero)
+        {
+          Idle();
+        }
+
+        if(Input.GetButtonDown("Jump") && isGrounded)
+        {
+          Jump();
+        }  
+        
+      
         controller.Move(move * currentSpeed * Time.deltaTime);
 
         velocity.y += gravity * Time.deltaTime; // Current speed with acceleration, framerate independent;
@@ -71,30 +97,7 @@ public class PlayerMovement : MonoBehaviour
           Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
 
           playerModel.transform.rotation = Quaternion.RotateTowards(playerModel.transform.rotation, toRotation, modelRotationSpeedThirdPerson * Time.deltaTime);
-        }
-     
-        /* if (pressed)
-          {
-            currentSpeed = currentSpeed * 2;
-          }
-        */
-        if(move != Vector3.zero && !pressed)
-        {
-          Walk();
-        }
-        else if(move != Vector3.zero && pressed)
-        {
-          Run();
-        }
-        else if(move == Vector3.zero)
-        {
-          Idle();
-        }
-
-        if(Input.GetButtonDown("Jump") && isGrounded)
-          {
-            Jump();
-          }  
+        }        
       }
     }
 
@@ -120,8 +123,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Run()
     {
-      float currentSpeed = baseSpeed;
-      currentSpeed = currentSpeed * 2;
       anim.SetFloat("Speed", 0.98f, 0.1f, Time.deltaTime);
     }
 

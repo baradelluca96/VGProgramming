@@ -55,24 +55,24 @@ public class PlayerInstructions : MonoBehaviour
     IEnumerator ShowInitialDialogue(){
         yield return new WaitForSeconds(1f);
         printer.PrintInitialDialogue(1);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(7f);
 
         printer.PrintInitialDialogue(2);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(7f);
 
         printer.PrintInitialDialogue(3);
         yield return new WaitForSeconds(4f);
 
         printer.PrintInitialDialogue(4);
-        yield return new WaitForSeconds(5f);
 
         if(showMovementInstructions)
         {
+            yield return new WaitForSeconds(5f);
             StartCoroutine("ShowMovementInstructions");
             displayedMovementInstructions = true;
         }else
         {
-            StartCoroutine("RemoveInstructions");
+            StartCoroutine("DelayedRemoveInstructions");
         }
     }
 
@@ -95,25 +95,18 @@ public class PlayerInstructions : MonoBehaviour
             StartCoroutine("ShowOrbInstructions");
         }
 
-        if(other.gameObject.name == "TorchInstructionsTrigger" && showTorchLightInstructions)
+        if(other.gameObject.name == "InstructionsTrigger" && showTorchLightInstructions)
         {
             StopCoroutine("DelayedRemoveInstructions");
             showTorchLightInstructions = false;
-            printer.ShowTorchInstructions();
-            StartCoroutine("DelayedRemoveInstructions");
-        }
-
-        if(other.gameObject.name == "OxygenInstructionsTrigger" && showOxygenInstructions)
-        {
-            StopCoroutine("DelayedRemoveInstructions");
             showOxygenInstructions = false;
-            printer.ShowOxygenInstructions();
+            printer.ShowLabInstructions();
             StartCoroutine("DelayedRemoveInstructions");
-
         }
     }
 
     IEnumerator ShowOrbInstructions(){
+        StopCoroutine("DelayedRemoveInstructions");
         showOrbInstructions = false;
         printer.ShowOrbInstructions(1);
         yield return new WaitForSeconds(6f);
@@ -125,12 +118,11 @@ public class PlayerInstructions : MonoBehaviour
     IEnumerator ShowInitialLabDialogue() {
         yield return new WaitForSeconds(1f);
         printer.PrintInitialLabDialogue(1);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(3.5f);
 
         printer.PrintInitialLabDialogue(2);
-        yield return new WaitForSeconds(8f);
 
-        StartCoroutine("RemoveInstructions");
+        StartCoroutine("DelayedRemoveInstructions");
     }
 
     IEnumerator ShowVillageDialogue() {

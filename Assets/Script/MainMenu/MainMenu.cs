@@ -5,8 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start() {
+        Cursor.visible = true;
+        Screen.lockCursor = false;
+       
+    }
+
     // Start is called before the first frame update
     public void PlayGame ()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    // Update is called once per frame
+    public void QuitGame()
+    {
+        Debug.Log("Quit!");
+        Application.Quit();
+    }
+
+    public void ReseumeGame()
     {
         bool runComplete = PlayerPrefs.GetInt("Run") > 0;
         bool villageComplete = PlayerPrefs.GetInt("Village") > 0;
@@ -23,17 +42,5 @@ public class MainMenu : MonoBehaviour
         }
 
         SceneManager.LoadScene(scene);
-    }
-
-    // Update is called once per frame
-    public void QuitGame()
-    {
-        Debug.Log("Quit!");
-        Application.Quit();
-    }
-
-    public void ResetGame()
-    {
-        PlayerPrefs.DeleteAll();
     }
 }
