@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13063997, g: 0.15575618, b: 0.1720283, a: 1}
+  m_IndirectSpecularColor: {r: 0.017849287, g: 0.025031583, b: 0.030012948, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21065,9 +21065,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 14.1
+  m_Intensity: 4
   m_Range: 21.22
-  m_SpotAngle: 81.6
+  m_SpotAngle: 70
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -21159,7 +21159,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 34.34
+  m_Intensity: 10
   m_Range: 13.2049675
   m_SpotAngle: 53.208748
   m_InnerSpotAngle: 21.80208
@@ -24703,7 +24703,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 34.34
+  m_Intensity: 12
   m_Range: 13.2049675
   m_SpotAngle: 53.208748
   m_InnerSpotAngle: 21.80208
@@ -56685,7 +56685,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 34.34
+  m_Intensity: 12
   m_Range: 13.2049675
   m_SpotAngle: 53.208748
   m_InnerSpotAngle: 21.80208
@@ -63054,7 +63054,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 14.1
+  m_Intensity: 4
   m_Range: 21.22
   m_SpotAngle: 81.6
   m_InnerSpotAngle: 21.80208
@@ -63376,7 +63376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1943421120}
-  baseSpeed: 11
+  baseSpeed: 6
   gravity: -100
   jumpHeight: 5
   modelRotationSpeedThirdPerson: 1000
@@ -63595,7 +63595,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 34.34
+  m_Intensity: 12
   m_Range: 13.2049675
   m_SpotAngle: 53.208748
   m_InnerSpotAngle: 21.80208
@@ -77807,7 +77807,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 14.1
+  m_Intensity: 4
   m_Range: 21.22
   m_SpotAngle: 81.6
   m_InnerSpotAngle: 21.80208
@@ -77901,7 +77901,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 14.1
+  m_Intensity: 4
   m_Range: 21.22
   m_SpotAngle: 81.6
   m_InnerSpotAngle: 21.80208
