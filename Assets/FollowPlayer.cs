@@ -12,11 +12,10 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] float right = 2f;
     // Start is called before the first frame update
 
-    private Animator anim;
+
     
     void Start()
     {
-        anim = GetComponentInChildren<Animator>();
     }
     
     void Update()
@@ -26,18 +25,7 @@ public class FollowPlayer : MonoBehaviour
             Vector3 targetPosition = (player.transform.position + player.transform.forward * -2f + player.transform.up * 3f + player.transform.right * 2f);
             float distance = Mathf.Clamp(Vector3.Distance(transform.position, targetPosition), 0.005f, 100f);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 5f * Time.deltaTime * distance);
-            OpenAnim();
-        }else{
-            CloseAnim();     
         }
     }
 
-    private void OpenAnim()
-    {
-        anim.SetBool("OpenAnim", true);
-    }
-    private void CloseAnim()
-    {
-        anim.SetBool("OpenAnim", false);
-    }
 }
