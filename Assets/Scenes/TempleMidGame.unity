@@ -2480,7 +2480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67c6c6a34d2606c47830289c7107d5fe, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67c6c6a34d2606c47830289c7107d5fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7776,7 +7776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 01b161d6564a93748a1a03ed24cdf1c3, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 01b161d6564a93748a1a03ed24cdf1c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9667,7 +9667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c9b02959d9925c841a53742a92ad54aa, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c9b02959d9925c841a53742a92ad54aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10290,7 +10290,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0, g: 0.3584906, b: 0.27512065, a: 1}
+  m_Color: {r: 0.10980392, g: 0, b: 0.09803922, a: 1}
   m_Intensity: 14.94
   m_Range: 11.56
   m_SpotAngle: 30
@@ -13100,7 +13100,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.10980392, g: 0, b: 0.09803922, a: 1}
+  m_Color: {r: 0, g: 0.35686275, b: 0.27450982, a: 1}
   m_Intensity: 14.94
   m_Range: 11.56
   m_SpotAngle: 30
@@ -26354,7 +26354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c9b02959d9925c841a53742a92ad54aa, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c9b02959d9925c841a53742a92ad54aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37221,7 +37221,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0, g: 0.3584906, b: 0.27512065, a: 1}
+  m_Color: {r: 0.10980392, g: 0, b: 0.09803922, a: 1}
   m_Intensity: 14.94
   m_Range: 11.56
   m_SpotAngle: 30
@@ -40301,6 +40301,7 @@ GameObject:
   - component: {fileID: 1443469131}
   - component: {fileID: 1443469133}
   - component: {fileID: 1443469134}
+  - component: {fileID: 1443469135}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -40420,6 +40421,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillInteraction: {fileID: 1215187372}
+--- !u!114 &1443469135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443469127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ced50c50907f8644b69d29a96491f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1446637384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49911,7 +49924,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.10980392, g: 0, b: 0.09803922, a: 1}
+  m_Color: {r: 0, g: 0.35686275, b: 0.27450982, a: 1}
   m_Intensity: 14.94
   m_Range: 11.56
   m_SpotAngle: 30
