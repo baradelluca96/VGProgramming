@@ -63376,7 +63376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1943421120}
-  baseSpeed: 12
+  baseSpeed: 11
   gravity: -100
   jumpHeight: 5
   modelRotationSpeedThirdPerson: 1000
