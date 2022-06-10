@@ -7,7 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     private void Start() {
         Cursor.visible = true;
+        Screen.lockCursor = false;
+       
     }
+
     // Start is called before the first frame update
     public void PlayGame ()
     {
